@@ -1,6 +1,6 @@
 const WorldCard = ({ world }) => {
   return (
-    <article className="shadow-md shadow-black bg-gray-50 p-5">
+    <article className="bg-black p-5 text-white">
       <div className="grid grid-cols-3 justify-items-center items-center my-5">
         <div className="h-[3px] w-full bg-sky-700"></div>
         <h4 className="uppercase text-center">{world.id.split("Cycle")[0] + " Cycle"}</h4>
@@ -25,7 +25,7 @@ const WorldCard = ({ world }) => {
         </div>
         {
             world.shortString? 
-            <div className="grid w-full bg-black/90 text-white p-3 rounded-md">
+            <div className="grid w-full bg-gray-800 text-white p-3">
                 <span className="text-center">{world.shortString}</span>
             </div>
             : ""
