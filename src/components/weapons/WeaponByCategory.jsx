@@ -67,10 +67,10 @@ const WeaponByCategory = () => {
           } 
         </section>
         <section className="flex flex-col gap-5">
-          <div className="grid grid-cols-3">
-           <button onClick={ handleLessPage}>-</button>
-            <h4>Select a weapon</h4>
-            <button onClick={ handlePlussPage}>+</button>
+          <div className="grid grid-cols-[40px,_1fr,_40px]">
+           <button onClick={ handleLessPage}>{"<"}</button>
+            <h4 className="text-center">Select a weapon</h4>
+            <button onClick={ handlePlussPage}>{">"}</button>
           </div>
           <section className="grid grid-cols-[repeat(auto-fill,_minmax(100px,_1fr))] gap-4 ">
             {

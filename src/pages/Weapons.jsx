@@ -33,7 +33,7 @@ const Weapons = () => {
       <h3 className="py-10">WEAPONS</h3>
       <section className="grid gap-5">
         <h4>Weapons by Category</h4>
-        <div className="grid grid-cols-2 gap-4 auto-rows-fr">
+        <div className="grid sm:grid-cols-2 gap-4 auto-rows-fr">
           {categoryOfWeapons?.map((category) => (
             <WeaponCategoryLink key={category} category={category} />
           ))}

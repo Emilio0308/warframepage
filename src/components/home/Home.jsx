@@ -32,7 +32,12 @@ const Home = () => {
                   <img download="lazy" src="/home/links/weapons.jpeg" alt="weapons sections" />
                 </div>
               </Link>
-              <Link to="/warframes">WARFRAMES </Link>
+              <Link to="/cycles">
+                <h2>CYCLES</h2> 
+                <div>
+                  <img download="lazy" src="/home/links/weapons.jpeg" alt="cycles sections" />
+                </div> 
+              </Link>
               <Link to="/warframes">WARFRAMES </Link>
               <Link to="/warframes">WARFRAMES </Link>
               <Link to="/warframes">WARFRAMES </Link>

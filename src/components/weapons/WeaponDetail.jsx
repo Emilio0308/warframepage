@@ -88,8 +88,8 @@ const WeaponDetail = ( {currentWeapon} ) => {
                     <div key={component.uniqueName} className="border-[1px] border-gray-700 p-3 grid gap-5
                      bg-gray-700 text-white rounded-md shadow-md shadow-black">
                         <div onClick={ ()=> setShow(!show)} className="grid grid-cols-2 gap-4 justify-items-center">
-                        <span>{component.name} {">"}</span>
-                            <span>{component.description}</span>
+                            <span>{component.name} {">"}</span>
+                            <p className="w-full break-words">{component.description}</p>
                         </div>
                         <div className={`grid gap-2 ${show? "h-auto" : "h-0 invisible"}`}>
                         {
