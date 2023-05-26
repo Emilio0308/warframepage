@@ -13,28 +13,28 @@ const News = () => {
     }, [])
 
     const paginationNews = () => {
-      const news_X_page = 3
+      const news_X_page = 4
       const star = (currentPageNews - 1) * news_X_page
       const end = currentPageNews * news_X_page
+      const lastPage = Math.ceil(news?.length / news_X_page )
 
-      return { star , end }
+      return { star , end , lastPage }
     }
-    const { star , end } = paginationNews ()
+    const { star , end , lastPage } = paginationNews ()
 
     const hanldePlus = () => {
       const newPage = currentPageNews + 1
-      newPage > Math.ceil(news?.length / 3 )? setCurrentPageNews(1) :  setCurrentPageNews( newPage )
+      newPage > lastPage ? setCurrentPageNews(1) :  setCurrentPageNews( newPage )
     }
 
     const hanldeLess = () => {
       const newPage = currentPageNews - 1
-      console.log(newPage)
-      newPage <= 0 ? setCurrentPageNews(6) :  setCurrentPageNews( newPage )
+      newPage <= 0 ? setCurrentPageNews(lastPage) :  setCurrentPageNews( newPage )
     }
   return (
-    <section className="flex flex-col gap-3">
-      <div className="relative flex justify-center items-center">
-        <h2 className="tracking-widest">NEWS</h2>
+    <section className="flex flex-col min-h-[360px] justify-around items-center">
+      <div className="relative flex justify-center items-center w-full">
+        <h2 className="tracking-widest text-2xl font-semibold p-5">NEWS</h2>
         <button
           className="absolute top-[50%] translate-y-[-50%] left-3"
           onClick={hanldeLess}
@@ -48,10 +48,9 @@ const News = () => {
           {">"}
         </button>
       </div>
-      <section className=" grid grid-cols-3 gap-5 grid-rows-[auto]">
+      <section className=" grid grid-cols-[repeat(auto-fill,_minmax(240px,_1fr))] w-full max-w-[1200px] mx-auto gap-5">
         {news
-          ?.reverse()
-          .slice(star, end)
+          ?.slice(star, end)
           .map((newitem) => (
             <NewsCard key={newitem.id} newInfo={newitem} />
           ))}

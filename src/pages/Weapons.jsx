@@ -29,7 +29,7 @@ const Weapons = () => {
   }, [weapons]);
 
   return (
-    <section className="max-w-[1024px] mx-auto my-[100px] p-3">
+    <section className="max-w-[1200px] mx-auto my-[100px] p-3">
       <h3 className="py-10">WEAPONS</h3>
       <section className="grid gap-5">
         <h4>Weapons by Category</h4>

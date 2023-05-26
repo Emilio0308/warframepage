@@ -4,12 +4,12 @@ export const WeaponCategoryLink = ( { category } ) => {
   return (
     <Link
       to={`/weapons/${category}`}
-      className="border-[2px] border-gray-700 grid grid-rows-[30px,_1fr]"
+      className="grid grid-rows-[1fr,_50px] shadow-md shadow-black bg-black text-white"
     >
-      <span>{category}</span>
       <div className="">
-        <img className="w-full h-full object-cover" src={`/sectionweapon/${category}.webp`} alt="" />
+        <img download="lazy" className="w-full h-full object-cover" src={`/sectionweapon/${category}.webp`} alt={category} />
       </div>
+      <span className="p-3 w-full font-semibold uppercase tracking-[5px] hover:text-red-600 hover:bg-gray-300">{category}</span>
     </Link>
   );
 };

@@ -1,9 +1,14 @@
 const NewsCard = ( { newInfo }) => {
   return (
-    <article className="grid grid-rows-[100px,_1fr] shadow-md shadow-black/40 overflow-hidden">
-        <span className="p-2 text-xs w-full text-ellipsis text">{newInfo.message}</span>
-        <div className="w-full h-full overflow-hidden">
-            <img className=" w-full h-full object-cover" src={newInfo.imageLink} alt="" />
+    <article className="grid grid-rows-[1fr,_100px] shadow-md shadow-black overflow-hidden bg-black/90">
+        
+        <div className="w-full h-full overflow-hidden relative">
+            <img download="lazy" className="w-full h-full object-cover" src={newInfo.imageLink} alt="warframe news" />
+            <span className="absolute left-2 bottom-2 text-white">{new Date(newInfo.date).toLocaleString()}</span>
+        </div>
+        <div className="p-2 text-lg w-full text-ellipsis text-white relative">
+          <span>{newInfo.message}</span>
+          <a className="absolute right-2 bottom-2" target="_blank" href={newInfo.link}>View more</a>
         </div>
     </article>
   )
