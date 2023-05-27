@@ -23,18 +23,19 @@ const WarframeDetail = () => {
 
   return (
     <>
-      <ImgHeader img={"/warframes/nova.jpg"} text={"GET READY FOR WAR!"} />
+      {/* <ImgHeader img={"/warframes/nova.jpg"} text={"GET READY FOR WAR!"} /> */}
       <section className="bg-[url('/warframes/warframesdetailbg.jpg')] bg-fixed bg-center bg-no-repeat">
-        <section className="p-3 w-full max-w-[1200px] mx-auto grid gap-5">
-          <div className="grid md:grid-cols-2 grid-rows-[1fr,_auto]">
-              <WarframeDetailMain
-                urlWithoutQueryParams={urlWithoutQueryParams}
-                warframeName={warframeName}
-              />
-              <WarframePolarities warframeName={warframeName} />
-          </div>
+        <div className="grid md:grid-cols-2 grid-rows-[1fr,_auto] p-3 w-full max-w-[1200px] mx-auto">
+          <WarframeDetailMain
+            urlWithoutQueryParams={urlWithoutQueryParams}
+            warframeName={warframeName}
+          />
+          <WarframePolarities warframeName={warframeName} />
+        </div>
+      </section>
+      <section className="bg-[#ececec] w-full">
+        <section className="p-3 w-full max-w-[1200px] mx-auto grid gap-20 py-[80px]">
           <WarframeDetailAbilities warframeName={warframeName} />
-
           <WarframeComponents warframeName={warframeName} />
         </section>
       </section>

@@ -11,7 +11,7 @@ import Footer from './components/Footer'
 function App() {
 
   return (
-    <main>
+    <main className='font-sans'>
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/warframes' element={<Warframe/>} />

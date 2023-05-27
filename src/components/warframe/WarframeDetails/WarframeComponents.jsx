@@ -8,7 +8,7 @@ const WarframeComponents = ( { warframeName }) => {
         <h4 className="uppercase text-center font-medium text-3xl p-4 tracking-[4px] text-red-600">Components</h4>
         <div className="w-full h-[2px] bg-red-600"></div>
       </div>
-      <div className="grid grid-cols-1 gap-4 auto-rows-fr">
+      <div className="grid gap-4 sm:grid-cols-2 auto-rows-fr">
         {warframeName?.components.map((component) => (
           <WarframeComponent key={component.name} component={component} />
         ))}
