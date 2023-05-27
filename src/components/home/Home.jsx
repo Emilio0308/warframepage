@@ -52,7 +52,16 @@ const Home = () => {
                 />
               </div>
             </Link>
-            <Link to="/warframes">WARFRAMES </Link>
+            <Link to="/items">
+              <h2>ITEMS</h2>
+              <div>
+                <img
+                  download="lazy"
+                  src="/home/links/weapons.jpeg"
+                  alt="cycles sections"
+                />
+              </div>
+            </Link>
             <Link to="/warframes">WARFRAMES </Link>
             <Link to="/warframes">WARFRAMES </Link>
             <Link to="/warframes">WARFRAMES </Link>

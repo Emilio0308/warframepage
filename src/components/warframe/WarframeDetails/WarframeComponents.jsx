@@ -1,6 +1,7 @@
 import WarframeComponent from "../WarframeComponent";
 
 const WarframeComponents = ( { warframeName }) => {
+  console.log(warframeName)
   return (
     <article className="">
       <div className="col-span-2 w-full grid grid-cols-[1fr,_auto,_1fr] items-center">

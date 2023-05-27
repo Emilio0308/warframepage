@@ -11,9 +11,6 @@ const WarframeDetail = () => {
   const { name } = useParams();
   const [warframeName, setWarframeName] = useState();
 
-  const url = warframeName?.wikiaThumbnail;
-  const extension = ".png";
-  const urlWithoutQueryParams = url?.split(extension)[0] + extension;
   useEffect(() => {
     axiosWarframe
       .get(`warframes/search/${name}/`)
@@ -27,7 +24,6 @@ const WarframeDetail = () => {
       <section className="bg-[url('/warframes/warframesdetailbg.jpg')] bg-fixed bg-center bg-no-repeat">
         <div className="grid md:grid-cols-2 grid-rows-[1fr,_auto] p-3 w-full max-w-[1200px] mx-auto">
           <WarframeDetailMain
-            urlWithoutQueryParams={urlWithoutQueryParams}
             warframeName={warframeName}
           />
           <WarframePolarities warframeName={warframeName} />

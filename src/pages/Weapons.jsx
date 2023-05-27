@@ -31,11 +31,15 @@ const Weapons = () => {
 
   return (
     <>
-      <ImgHeader img={"/wakeup.jpg"}/>
+      <ImgHeader img={"/wakeup.jpg"} />
       <section className="max-w-[1200px] mx-auto p-3">
-        <h3 className="text-4xl tracking-[5px] font-medium uppercase py-10 ">WEAPONS</h3>
+        <h3 className="text-4xl tracking-[5px] font-medium uppercase py-10 ">
+          WEAPONS
+        </h3>
         <section className="grid gap-5">
-          <h4 className="text-xl text-gray-500 font-medium py-5">Weapons by Category</h4>
+          <h4 className="text-xl text-gray-500 font-medium py-5">
+            Weapons by Category
+          </h4>
           <div className="grid sm:grid-cols-2 gap-4 auto-rows-fr">
             {categoryOfWeapons?.map((category) => (
               <WeaponCategoryLink key={category} category={category} />
