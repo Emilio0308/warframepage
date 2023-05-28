@@ -20,7 +20,7 @@ const WarframeDetail = () => {
 
   return (
     <>
-      {/* <ImgHeader img={"/warframes/nova.jpg"} text={"GET READY FOR WAR!"} /> */}
+      <ImgHeader img={"/warframes/excalibur.jpg"} text={"GET READY FOR WAR!"} />
       <section className="bg-[url('/warframes/warframesdetailbg.jpg')] bg-fixed bg-center bg-no-repeat">
         <div className="grid md:grid-cols-2 grid-rows-[1fr,_auto] p-3 w-full max-w-[1200px] mx-auto">
           <WarframeDetailMain

@@ -7,9 +7,9 @@ const WarframePolarities = ( { warframeName }) => {
         <div className="w-full h-[2px] bg-red-600"></div>
       </div>
       <div className="grid grid-cols-2 w-full gap-4 justify-items-center">
-        {warframeName?.polarities.map((polarity) => (
+        {warframeName?.polarities.map((polarity , i) => (
           <span
-            key={polarity}
+            key={polarity + i}
             className="bg-gray-700 w-full max-w-xl rounded-md text-center capitalize text-white py-5"
           >
             {polarity}

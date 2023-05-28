@@ -3,6 +3,7 @@ import { axiosWarframe } from "../utils/configAxios";
 import FormSearch from "../components/FormSearch";
 import ModCard from "../components/mods/ModCard";
 import { pagination } from "../utils/pagination,js";
+import ImgHeader from "../components/ImgHeader";
 
 const Mods = () => {
   const [allMods, setAllMods] = useState();
@@ -59,6 +60,8 @@ const Mods = () => {
   
 
   return (
+    <>
+    <ImgHeader img={"/modsimg/ivara.jpg"} text={"GET READY FOR WAR!"} />
     <section className="w-full max-w-[1200px] mx-auto p-3">
         <h2 className="text-4xl tracking-[5px] font-medium uppercase py-10">ALL MODS</h2>
       <FormSearch
@@ -93,6 +96,7 @@ const Mods = () => {
         ))}
       </section>
     </section>
+    </>
   );
 };
 export default Mods;

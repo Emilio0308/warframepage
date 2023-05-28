@@ -5,6 +5,7 @@ import WeaponCard from "./WeaponCard";
 import WeaponDetail from "./WeaponDetail";
 import WeaponStatistics from "./weaponDetail/WeaponStatistics";
 import WeaponComponents from "./weaponDetail/WeaponComponents";
+import ImgHeader from "../ImgHeader";
 
 const WeaponByCategory = () => {
   const { categoryName } = useParams();
@@ -55,8 +56,10 @@ const WeaponByCategory = () => {
       .catch((err) => console.log(err));
   }, []);
   return (
+    <>
+    <ImgHeader img={"/sectionweapon/nova.jpg"} text={"GET READY FOR WAR!"} />
     <section className="max-w-[1200px] mx-auto py-10 p-3">
-      <h3 className="uppercase tracking-widest text-gray-500 py-5">
+      <h3 className="uppercase text-3xl tracking-widest text-gray-500 py-5">
         {categoryName}
       </h3>
       <section className="flex flex-col-reverse sm:grid sm:grid-cols-2 gap-5">
@@ -110,6 +113,7 @@ const WeaponByCategory = () => {
         </section>
       </article>
     </section>
+    </>
   );
 };
 export default WeaponByCategory;
