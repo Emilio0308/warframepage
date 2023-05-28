@@ -3,10 +3,40 @@ import { axiosWarframe } from "../utils/configAxios";
 import WeaponCard from "../components/weapons/WeaponCard";
 import { WeaponCategoryLink } from "../components/weapons/WeaponCategoryLink";
 import ImgHeader from "../components/ImgHeader";
+import FormSearch from "../components/FormSearch";
+import { pagination } from "../utils/pagination,js";
 
 const Weapons = () => {
   const [weapons, setWeapons] = useState();
+  const [weaponsToShow, setWeaponsToShow] = useState();
+  const [currentPage, setCurrentPage] = useState(1);
+  const [currentBlock, setCurrentBlock] = useState(1);
   const [categoryOfWeapons, setCategoryOfWeapons] = useState([]);
+
+  const { start, end, lastPage, pages } = pagination(
+    20,
+    currentPage,
+    weaponsToShow
+  );
+
+  const {
+    start: blockStart,
+    end: blockEnd,
+    lastPage: lastBlock,
+  } = pagination(5, currentBlock, pages);
+
+  const handlePlussBlock = () => {
+    const newBlock = currentBlock + 1;
+    if (newBlock <= lastBlock) {
+      setCurrentBlock(newBlock);
+    }
+  };
+  const handleLessBlock = () => {
+    const newBlock = currentBlock - 1;
+    if (newBlock > 0) {
+      setCurrentBlock(newBlock);
+    }
+  };
 
   useEffect(() => {
     axiosWarframe
@@ -16,6 +46,12 @@ const Weapons = () => {
       })
       .catch((err) => console.log(err));
   }, []);
+
+  useEffect(() => {
+    if (weapons) {
+      setWeaponsToShow(weapons);
+    }
+  }, [weapons]);
 
   useEffect(() => {
     const categorys = [];
@@ -33,7 +69,7 @@ const Weapons = () => {
     <>
       <ImgHeader img={"/wakeup.jpg"} />
       <section className="max-w-[1200px] mx-auto p-3">
-        <h3 className="text-4xl tracking-[5px] font-medium uppercase py-10 ">
+        <h3 className="text-4xl tracking-[5px] font-medium uppercase py-10">
           WEAPONS
         </h3>
         <section className="grid gap-5">
@@ -47,19 +83,34 @@ const Weapons = () => {
           </div>
         </section>
         <section>
-          <h4>All Weapons</h4>
-          <form action="" className="flex gap-4 flex-wrap">
-            <div className="flex-grow">
-              <input
-                className="w-full p-5"
-                type="text"
-                placeholder="boltor, ignis..."
-              />
+          <h4 className="text-xl text-gray-500 font-medium pt-10">All Weapons</h4>
+          <FormSearch
+            allItems={weapons}
+            categories={categoryOfWeapons}
+            nameOfCategory={"category"}
+            setItemsToShow={setWeaponsToShow}
+            setCurrentPage={setCurrentPage}
+            setCurrentBlock={setCurrentBlock}
+          />
+          <section className="grid grid-cols-[repeat(3,_auto)] py-10">
+            <button onClick={handleLessBlock}>prev</button>
+            <div className="flex gap-2 justify-center items-center">
+              {pages.slice(blockStart, blockEnd).map((page) => (
+                <button
+                  key={page}
+                  onClick={() => setCurrentPage(page)}
+                  className={`${
+                    currentPage == page ? "bg-red-600" : "bg-gray-200"
+                  } rounded-md p-3 aspect-square`}
+                >
+                  {page}
+                </button>
+              ))}
             </div>
-            <button className="">Search</button>
-          </form>
+            <button onClick={handlePlussBlock}>next</button>
+          </section>
           <section className="grid grid-cols-[repeat(auto-fill,_minmax(220px,_1fr))] gap-4 auto-rows-fr">
-            {weapons?.map((weapon) => (
+            {weaponsToShow?.slice(start, end).map((weapon) => (
               <WeaponCard
                 key={
                   weapon.uniqueName + weapon.wikiaThumbnail + weapon.wikiaUrl

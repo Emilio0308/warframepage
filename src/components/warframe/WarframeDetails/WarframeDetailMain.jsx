@@ -4,7 +4,7 @@ const WarframeDetailMain = ( { warframeName }) => {
   const { url } = imgUrl( warframeName )
   return (
     <article className="grid justify-items-center">
-            <div className="grid gap-4 p-10">
+            <div className="grid gap-4 p-24">
               <div className="grid grid-cols-2 items-center text-xl">
                 <h3 className="font-medium uppercase">{warframeName?.name}</h3>
                 <span>{"( " + warframeName?.aura + " )"}</span>

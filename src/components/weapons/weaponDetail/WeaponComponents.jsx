@@ -4,18 +4,18 @@ const WeaponComponents = ({ component }) => {
     const { url } = imgUrl(component)
   return (
     <div
-      className="border-[1px] border-gray-700 p-3 grid gap-5
+      className="border-[1px] border-gray-700 p-3 grid grid-rows-[250px,_1fr] gap-5
                      bg-gray-700 text-white rounded-md shadow-md shadow-black"
     >
       <div
         className="grid grid-cols-2 gap-4 justify-items-center items-center"
       >
-        <div className="grid grid-rows-[auto,_1fr]">
-          <span>
-            {component?.name} {">"}
+        <div className="grid grid-rows-[30px,_1fr] w-full h-full">
+          <span className="w-full text-center">
+            {component?.name}
           </span>
-          <div className="w-full">
-            <img className="w-full" src={url} alt={component?.name} />
+          <div className="w-full h-full flex-grow">
+            <img className="max-h-[220px] h-full" src={url} alt={component?.name} />
           </div>
         </div>
         <p className="w-full break-words">{component?.description}</p>
