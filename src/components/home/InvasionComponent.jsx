@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { axiosWarframe } from "../../utils/configAxios"
+import InvasionCard from "../invasions/InvasionCard"
 
 const InvasionComponent = () => {
     const [ivasionas, setIvasionas] = useState()
@@ -17,9 +18,10 @@ const InvasionComponent = () => {
         <h3 className="uppercase py-5">invasions</h3>
         <section className="w-full border-8 relative h-[240px] overflow-hidden">
             <div className="grid gap-4 grid-rows-1 grid-flow-col-dense absolute left-[00%]">
-                {/* {
+                {
                    ivasionas?.map( (invasion) => <InvasionCard key={invasion.id} invasion={invasion}/>) 
-                } */}
+
+                }
             </div>
         </section>
     </section>
