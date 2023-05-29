@@ -18,14 +18,17 @@ const WarframeDetail = () => {
       .catch((err) => console.log(err));
   }, [name]);
 
+  const url = `https://warframe-web-assets.nyc3.cdn.digitaloceanspaces.com/images/warframes/splash/${name
+    .split(" ")
+    .join("")
+    .toLowerCase()}.jpg`;
+
   return (
     <>
-      <ImgHeader img={"/warframes/excalibur.jpg"} text={"GET READY FOR WAR!"} />
-      <section className="bg-[url('/warframes/warframesdetailbg.jpg')] bg-fixed bg-center bg-no-repeat">
+      <ImgHeader img={url} text={warframeName?.name} />
+      <section className="bg-[url('/warframes/warframesdetailbg.jpg')] bg-fixed bg-center bg-no-repeat py-20">
         <div className="grid md:grid-cols-2 grid-rows-[1fr,_auto] p-3 w-full max-w-[1200px] mx-auto">
-          <WarframeDetailMain
-            warframeName={warframeName}
-          />
+          <WarframeDetailMain warframeName={warframeName} />
           <WarframePolarities warframeName={warframeName} />
         </div>
       </section>

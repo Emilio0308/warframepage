@@ -1,8 +1,8 @@
 const ImgHeader = ( { img , text } ) => {
   return (
-    <div className="relative h-[500px] w-full overflow-hidden flex justify-center items-center">
+    <div className="relative h-[100vh] w-full overflow-hidden flex justify-center items-center">
       <img
-        className="min-h-[500px] max-w-none w-full object-cover"
+        className="h-full max-w-none w-full object-cover"
         src={img}
         alt="all warframes"
       />
