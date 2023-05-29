@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import News from "./News";
-import Invasions from "./invasions";
 
 const Home = () => {
   return (
@@ -21,9 +20,9 @@ const Home = () => {
         <section className="p-3">
           <News />
         </section>
-        <section className="p-3 w-full">
+        {/* <section className="p-3 w-full">
           <Invasions/>
-        </section>
+        </section> */}
         <section className="p-3">
           <article className="grid grid-cols-[repeat(auto-fill,_minmax(260px,_1fr))] auto-rows-fr gap-5 max-w-[1200px] mx-auto">
             <Link className="grid grid-rows-[30px,_1fr]" to="/warframes">
