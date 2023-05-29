@@ -75,7 +75,7 @@ const Warframe = () => {
           <button onClick={ handleClickSearchWarframe } className="h-[60px] border-[2px] p-3">search</button>
           <button onClick={ handleViewAll } className="bg-black text-white p-3 shadow-md shadow-black hover:bg-white hover:text-black">VIEW ALL</button>
         </form>
-        <section className="grid grid-cols-[repeat(auto-fill,_minmax(260px,_1fr))] gap-5">
+        <section className="grid grid-cols-[repeat(auto-fill,_minmax(180px,_1fr))] gap-5">
           {warframesToShow?.map((warframe) => (
             <WarframeCard key={warframe.uniqueName} warframe={warframe} />
           ))}

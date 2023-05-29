@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import News from "./News";
+import Invasions from "./invasions";
 
 const Home = () => {
   return (
@@ -19,6 +20,9 @@ const Home = () => {
         </div>
         <section className="p-3">
           <News />
+        </section>
+        <section className="p-3 w-full">
+          <Invasions/>
         </section>
         <section className="p-3">
           <article className="grid grid-cols-[repeat(auto-fill,_minmax(260px,_1fr))] auto-rows-fr gap-5 max-w-[1200px] mx-auto">

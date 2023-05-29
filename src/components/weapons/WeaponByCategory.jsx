@@ -89,7 +89,7 @@ const WeaponByCategory = () => {
             <h4 className="text-center">Select a weapon</h4>
             <button onClick={handlePlussPage}>{">"}</button>
           </div>
-          <section className="grid grid-cols-[repeat(auto-fill,_minmax(100px,_1fr))] gap-4 ">
+          <section className="grid grid-cols-[repeat(auto-fill,_minmax(120px,_1fr))] gap-4 ">
             {weaponsByCategory?.slice(start, end).map((weapon) => (
               <WeaponCard
                 key={weapon.name}

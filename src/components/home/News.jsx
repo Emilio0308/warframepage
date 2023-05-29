@@ -33,7 +33,7 @@ const News = () => {
     }
   return (
     <section className="flex flex-col min-h-[360px] justify-around items-center">
-      <div className="relative flex justify-center items-center w-full">
+      <div className="relative flex justify-center items-center w-full max-w-[1200px] mx-auto">
         <h2 className="tracking-[8px] text-5xl text-red-600 font-bold p-5">NEWS</h2>
         <button
           className="absolute top-[50%] translate-y-[-50%] left-3"
