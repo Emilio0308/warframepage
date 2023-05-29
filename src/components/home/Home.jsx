@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import News from "./News";
-import Invasions from "./invasions";
+import InvasionComponent from "./InvasionComponent";
+
+
 
 const Home = () => {
   return (
@@ -22,7 +24,7 @@ const Home = () => {
           <News />
         </section>
         <section className="p-3 w-full">
-          <Invasions/>
+        <InvasionComponent/>
         </section>
         <section className="p-3">
           <article className="grid grid-cols-[repeat(auto-fill,_minmax(260px,_1fr))] auto-rows-fr gap-5 max-w-[1200px] mx-auto">

@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react"
 import { axiosWarframe } from "../../utils/configAxios"
-// import InvasionCard from "../invasions/InvasionCard"
 
-const Invasions = () => {
+const InvasionComponent = () => {
     const [ivasionas, setIvasionas] = useState()
     useEffect(() => {
       axiosWarframe.get("pc/en/invasions/")
@@ -26,4 +25,4 @@ const Invasions = () => {
     </section>
   )
 }
-export default Invasions
+export default InvasionComponent
