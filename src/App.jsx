@@ -1,5 +1,4 @@
 import { Route, Routes } from 'react-router-dom'
-import './App.css'
 import Home from './components/home/Home'
 import Warframe from './pages/Warframe'
 import WarframeDetail from './components/warframe/WarframeDetail'

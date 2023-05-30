@@ -2,7 +2,7 @@ import FactionReward from "./FactionReward";
 
 const InvasionCard = ({ invasion }) => {
   return (
-    <article className="w-[250px] bg-white">
+    <article className="w-[250px] bg-white select-none">
       <div className="grid justify-items-center border-b-2">
         <span>Time left: {invasion.eta}</span>
         <span>{invasion.desc}</span>
