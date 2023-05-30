@@ -6,6 +6,8 @@ import WeaponDetail from "./WeaponDetail";
 import WeaponStatistics from "./weaponDetail/WeaponStatistics";
 import WeaponComponents from "./weaponDetail/WeaponComponents";
 import ImgHeader from "../ImgHeader";
+import WeaponsButtonsPage from "./weaponDetail/WeaponsButtonsPage";
+import { pagination } from "../../utils/pagination,js";
 
 const WeaponByCategory = () => {
   const { categoryName } = useParams();
@@ -13,36 +15,7 @@ const WeaponByCategory = () => {
   const [currentWeapon, setCurrentWeapon] = useState();
   const [currentPage, setCurrentPage] = useState(1);
 
-  const paginationWeapons = () => {
-    const WEAPONS_X_PAGE = 10;
-    const start = (currentPage - 1) * WEAPONS_X_PAGE;
-    const end = currentPage * WEAPONS_X_PAGE;
-    const maxNumOfWeapons = weaponsByCategory?.length;
-    const lastPage = Math.ceil(maxNumOfWeapons / WEAPONS_X_PAGE);
-
-    return { start, end, lastPage };
-  };
-  const { start, end, lastPage } = paginationWeapons();
-
-  const handlePlussPage = () => {
-    const newPage = currentPage + 1;
-    if (lastPage < newPage) {
-      return;
-    } else {
-      setCurrentPage(newPage);
-    }
-  };
-
-  const handleLessPage = () => {
-    const newPage = currentPage - 1;
-    if (newPage > 0) {
-      setCurrentPage(newPage);
-    }
-  };
-
-  useEffect(() => {
-    paginationWeapons();
-  }, [currentPage]);
+  const { start, end, lastPage} = pagination( 10, currentPage , weaponsByCategory)
 
   useEffect(() => {
     axiosWarframe
@@ -84,11 +57,7 @@ const WeaponByCategory = () => {
           )}
         </section>
         <section className="flex flex-col gap-5">
-          <div className="grid grid-cols-[40px,_1fr,_40px]">
-            <button onClick={handleLessPage}>{"<"}</button>
-            <h4 className="text-center">Select a weapon</h4>
-            <button onClick={handlePlussPage}>{">"}</button>
-          </div>
+          <WeaponsButtonsPage currentPage={currentPage} setCurrentPage={setCurrentPage} lastPage={lastPage} />
           <section className="grid grid-cols-[repeat(auto-fill,_minmax(120px,_1fr))] gap-4 ">
             {weaponsByCategory?.slice(start, end).map((weapon) => (
               <WeaponCard
@@ -104,7 +73,7 @@ const WeaponByCategory = () => {
       <article className="flex flex-col gap-4">
         <span className="text-2xl">Components</span>
         <section className="grid sm:grid-cols-2 gap-4">
-          {currentWeapon?.components?.map((component) => (
+          {currentWeapon?.components?.map((component ,i) => (
             <WeaponComponents
               key={component.uniqueName}
               component={component}

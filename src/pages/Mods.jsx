@@ -13,7 +13,7 @@ const Mods = () => {
   const [currentBlock, setCurrentBlock] = useState(1);
 
   const { start, end, lastPage, pages } = pagination(
-    25,
+    24,
     currentPage,
     modsToShow
   );
@@ -90,7 +90,7 @@ const Mods = () => {
         </div>
         <button onClick={hanldePlussBlock}>{">"}</button>
       </section>
-      <section className="grid grid-cols-[repeat(auto-fill,_minmax(220px,_1fr))] gap-4 auto-rows-fr justify-items-center">
+      <section className="grid grid-cols-[repeat(auto-fill,_minmax(160px,_1fr))] gap-4 auto-rows-fr justify-items-center">
         {modsToShow?.slice(start, end).map((mod) => (
           <ModCard key={mod.uniqueName + mod.name} mod={mod} />
         ))}

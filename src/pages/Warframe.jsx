@@ -58,7 +58,7 @@ const Warframe = () => {
         <h2 className="text-4xl tracking-[5px] font-medium uppercase py-10">Warframes</h2>
         <form className="flex gap-5 flex-wrap">
           <div className="flex-grow shadow-md relative">
-            <input placeholder="Search your warframe..." onChange={ handleClickWriteWarframe } value={ warframeName } className="w-full h-[60px] px-5" type="text" />
+            <input placeholder="Search your warframe..." onChange={ handleClickWriteWarframe } value={ warframeName } className="w-full h-[60px] px-5 outline-none" type="text" />
             <section className="max-h-[300px] overflow-y-auto w-full bg-gray-600 absolute top-[100%]">
               {
                 listOfCoincidences?.map( (warframe) =>

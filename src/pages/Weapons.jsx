@@ -5,6 +5,7 @@ import { WeaponCategoryLink } from "../components/weapons/WeaponCategoryLink";
 import ImgHeader from "../components/ImgHeader";
 import FormSearch from "../components/FormSearch";
 import { pagination } from "../utils/pagination,js";
+import { useNavigate } from "react-router-dom";
 
 const Weapons = () => {
   const [weapons, setWeapons] = useState();
@@ -12,13 +13,16 @@ const Weapons = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [currentBlock, setCurrentBlock] = useState(1);
   const [categoryOfWeapons, setCategoryOfWeapons] = useState([]);
+  const navigate = useNavigate()
 
+  const redirectToWeaponDetailById = (weapon) => {
+    navigate(`/weapons/detail/${weapon.name}`)
+  }
   const { start, end, lastPage, pages } = pagination(
     20,
     currentPage,
     weaponsToShow
   );
-
   const {
     start: blockStart,
     end: blockEnd,
@@ -109,14 +113,14 @@ const Weapons = () => {
             </div>
             <button onClick={handlePlussBlock}>next</button>
           </section>
-          <section className="grid grid-cols-[repeat(auto-fill,_minmax(220px,_1fr))] gap-4 auto-rows-fr">
+          <section className="grid grid-cols-[repeat(auto-fill,_minmax(120px,_1fr))] gap-4 auto-rows-fr">
             {weaponsToShow?.slice(start, end).map((weapon) => (
               <WeaponCard
                 key={
                   weapon.uniqueName + weapon.wikiaThumbnail + weapon.wikiaUrl
                 }
                 weapon={weapon}
-                setCurrentWeapon={null}
+                setCurrentWeapon={redirectToWeaponDetailById}
               />
             ))}
           </section>

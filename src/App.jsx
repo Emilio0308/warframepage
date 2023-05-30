@@ -7,6 +7,7 @@ import WeaponByCategory from './components/weapons/WeaponByCategory'
 import PlanetsCycle from './pages/PlanetsCycle'
 import Footer from './components/Footer'
 import Mods from './pages/Mods'
+import WeaponDetailById from './components/weapons/WeaponDetailById'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <Route path='/warframes/:name' element={<WarframeDetail/>} />
         <Route path='/weapons' element={<Weapons/>} />
         <Route path='/weapons/:categoryName' element={<WeaponByCategory/>} />
+        <Route path='/weapons/detail/:weaponName' element={<WeaponDetailById/>} />
         <Route path='/cycles' element={<PlanetsCycle/>} />
         <Route path='/mods' element={<Mods/>} />
       </Routes>

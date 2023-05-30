@@ -40,7 +40,7 @@ const FormSearch = ({
         <input
           onChange={hanldeChangeInput}
           value={itemName}
-          className="w-full h-full p-3"
+          className="w-full h-full p-3 outline-none"
           placeholder="Search items by name"
           type="text"
         />
