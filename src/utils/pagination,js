@@ -1,11 +1,11 @@
-export const pagination = ( ITEMS_X_PAGE, currentPage , allItems) => {
-    const start = (currentPage - 1) * ITEMS_X_PAGE;
-    const end = currentPage * ITEMS_X_PAGE;
-    const totalQuantityOfItems = allItems?.length;
-    const lastPage = Math.ceil(totalQuantityOfItems / ITEMS_X_PAGE);
-    const pages = []
-    for (let i = 1; i <= lastPage; i++) {
-        pages.push(i)
-    }
-    return { start, end, lastPage , pages};
-  };
+export const pagination = (ITEMS_X_PAGE, currentPage, allItems) => {
+  const start = (currentPage - 1) * ITEMS_X_PAGE;
+  const end = currentPage * ITEMS_X_PAGE;
+  const totalQuantityOfItems = allItems?.length;
+  const lastPage = Math.ceil(totalQuantityOfItems / ITEMS_X_PAGE);
+  const pages = [];
+  for (let i = 1; i <= lastPage; i++) {
+    pages.push(i);
+  }
+  return { start, end, lastPage, pages };
+};

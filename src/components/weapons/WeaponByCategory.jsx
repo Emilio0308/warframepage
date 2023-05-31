@@ -61,7 +61,7 @@ const WeaponByCategory = () => {
           <section className="grid grid-cols-[repeat(auto-fill,_minmax(120px,_1fr))] gap-4 ">
             {weaponsByCategory?.slice(start, end).map((weapon) => (
               <WeaponCard
-                key={weapon.name}
+                key={weapon.name + weapon.uniqueName}
                 weapon={weapon}
                 setCurrentWeapon={setCurrentWeapon}
               />

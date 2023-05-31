@@ -5,6 +5,7 @@ const ImgHeader = ( { img , text } ) => {
         className="h-full max-w-none w-full object-cover"
         src={img}
         alt="all warframes"
+        loading="lazy"
       />
       <span className="absolute w-full text-center bottom-8 text-gray-100 text-4xl sm:text-6xl tracking-[10px]">
         {text}

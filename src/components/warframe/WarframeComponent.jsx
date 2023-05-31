@@ -13,6 +13,7 @@ const WarframeComponent = ({ component }) => {
             className="w-full h-full object-contain"
             src={`${url}`}
             alt={component.name}
+            loading="lazy"
           />
         </div>
       </div>

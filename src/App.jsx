@@ -8,6 +8,7 @@ import PlanetsCycle from './pages/PlanetsCycle'
 import Footer from './components/Footer'
 import Mods from './pages/Mods'
 import WeaponDetailById from './components/weapons/WeaponDetailById'
+import Resources from './pages/Resources'
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
         <Route path='/weapons/detail/:weaponName' element={<WeaponDetailById/>} />
         <Route path='/cycles' element={<PlanetsCycle/>} />
         <Route path='/mods' element={<Mods/>} />
+        <Route path='/resources' element={<Resources/>} />
       </Routes>
      <Footer/>
     </main>

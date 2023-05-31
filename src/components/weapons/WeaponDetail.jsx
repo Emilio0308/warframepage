@@ -12,15 +12,15 @@ const WeaponDetail = ( {currentWeapon} ) => {
             <div className="grid grid-cols-3 gap-2 text-white">
                 <div className="grid grid-rows-2 justify-items-center bg-gray-700 rounded-md">
                     <span>impact</span>
-                    <span>{currentWeapon?.damage?.impact}</span>
+                    <span>{currentWeapon?.damage?.impact.toFixed(2)}</span>
                 </div>
                 <div className="grid grid-rows-2 justify-items-center bg-gray-700 rounded-md">
                     <span>slash</span>
-                    <span>{currentWeapon?.damage?.slash}</span>
+                    <span>{currentWeapon?.damage?.slash.toFixed(2)}</span>
                 </div>
                 <div className="grid grid-rows-2 justify-items-center bg-gray-700 rounded-md">
                     <span>puncture</span>
-                    <span>{currentWeapon?.damage?.puncture}</span>
+                    <span>{currentWeapon?.damage?.puncture.toFixed(2)}</span>
                 </div>
             </div>
             <div className="grid grid-cols-4 gap-2 text-xs">

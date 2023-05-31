@@ -20,7 +20,7 @@ const WarframeCard = ({ warframe }) => {
         {warframe.name}
       </h4>
       <div>
-        <img src={url} alt={warframe.name} />
+        <img src={url} alt={warframe.name} loading="lazy" />
       </div>
     </a>
   );

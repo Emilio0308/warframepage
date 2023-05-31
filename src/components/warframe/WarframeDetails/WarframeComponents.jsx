@@ -9,7 +9,7 @@ const WarframeComponents = ( { warframeName }) => {
         <div className="w-full h-[2px] bg-red-600"></div>
       </div>
       <div className="grid gap-4 sm:grid-cols-2 auto-rows-fr">
-        {warframeName?.components.map((component) => (
+        {warframeName?.components?.map((component) => (
           <WarframeComponent key={component.name} component={component} />
         ))}
       </div>

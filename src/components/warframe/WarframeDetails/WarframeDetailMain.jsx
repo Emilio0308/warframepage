@@ -18,6 +18,7 @@ const WarframeDetailMain = ( { warframeName }) => {
                   className="w-full h-full"
                   src= { url }
                   alt={warframeName?.name}
+                  loading="lazy"
                 />
               </div>
             </div>

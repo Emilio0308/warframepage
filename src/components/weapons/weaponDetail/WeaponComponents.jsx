@@ -15,6 +15,7 @@ const WeaponComponents = ({ component }) => {
               className="w-full object-contain"
               src={url}
               alt={component?.name}
+              loading="lazy"
             />
           </div>
         </div>
