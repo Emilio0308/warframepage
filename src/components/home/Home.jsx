@@ -34,7 +34,7 @@ const Home = () => {
             <LinkHome title={"WEAPONS"} img={"/home/links/weapons.jpeg"} route={"/weapons"} alt={"weapons sections"} />
             <LinkHome title={"CYCLES"} img={"/home/links/cycles.jpg"} route={"/cycles"} alt={"cycles sections"} />
             <LinkHome title={"MODS"} img={"/home/links/mods.webp"} route={"/mods"} alt={"mods sections"} />
-            <Link to="/resources">resources </Link>
+            <LinkHome title={"RESOURCES"} img={"/home/links/resources.jpeg"} route={"/resources"} alt={"resources sections"} />
             <Link to="/warframes">WARFRAMES </Link>
             <Link to="/warframes">WARFRAMES </Link>
             <Link to="/warframes">WARFRAMES </Link>

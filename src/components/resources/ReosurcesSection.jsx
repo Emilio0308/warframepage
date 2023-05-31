@@ -4,13 +4,13 @@ import FormSearch from "../FormSearch";
 import ReosourceCard from "./ReosourceCard";
 import PaginationBlocks from "../PaginationBlocks";
 
-const ReosurcesSection = ({ resources, categories }) => {
+const ReosurcesSection = ({ resources, categories , resourcesToShow , setResourcesToShow}) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [currentBlock, setCurrentBlock] = useState(1);
   const { start, end, lastPage, pages } = pagination(
     20,
     currentPage,
-    resources
+    resourcesToShow
   );
   const {
     start: startBlock,
@@ -29,6 +29,9 @@ const ReosurcesSection = ({ resources, categories }) => {
         allItems={resources}
         categories={categories}
         nameOfCategory={"type"}
+        setCurrentPage={setCurrentPage}
+        setCurrentBlock={setCurrentBlock}
+        setItemsToShow={setResourcesToShow}
       />
       <PaginationBlocks
         startBlock={startBlock}
@@ -40,7 +43,7 @@ const ReosurcesSection = ({ resources, categories }) => {
         setCurrentBlock={setCurrentBlock}
       />
       <section className="grid grid-cols-[repeat(auto-fill,_minmax(150px,_1fr))] gap-4">
-        {resources?.slice(start, end).map((resource) => (
+        {resourcesToShow?.slice(start, end).map((resource) => (
           <ReosourceCard resource={resource} key={resource.uniqueName} />
         ))}
       </section>

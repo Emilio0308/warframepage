@@ -4,6 +4,7 @@ import ReosurcesSection from "../components/resources/ReosurcesSection";
 
 const Resources = () => {
   const [resources, setResources] = useState([]);
+  const [resourcesToShow, setResourcesToShow] = useState()
   const [typeOfResource, setTypeOfResource] = useState("Resources")
   const [categories, setCategories] = useState([]);
 
@@ -30,6 +31,7 @@ const Resources = () => {
         (element) => element.category == typeOfResource
       );
       setResources(resourcesData);
+      setResourcesToShow(resourcesData)
     });
   }, [typeOfResource]);
 
@@ -56,7 +58,7 @@ const Resources = () => {
         <button onClick={(e) => setTypeOfResource(e.target.value)} value="Sigils">Sigils</button>
         <button onClick={(e) => setTypeOfResource(e.target.value)} value="Skins">Skins</button>
       </div>
-      <ReosurcesSection categories={categories} resources={resources} />
+      <ReosurcesSection categories={categories} resources={resources} resourcesToShow={resourcesToShow} setResourcesToShow={setResourcesToShow}/>
     </section>
   );
 };
