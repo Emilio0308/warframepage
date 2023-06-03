@@ -3,6 +3,7 @@ const PaginationBlocks = ({
   startBlock,
   endBlock,
   setCurrentPage,
+  currentPage,
   currentBlock,
   lastBlock,
   setCurrentBlock,
@@ -21,11 +22,11 @@ const PaginationBlocks = ({
   };
 
   return (
-    <div className="w-full grid grid-cols-3 gap-4 justify-center items-center h-[60px] my-5">
+    <div className="w-full grid grid-cols-[auto,_1fr,_auto] gap-4 justify-center items-center h-[60px] my-5">
       <button onClick={hanldeLessBlock}>{"<"}</button>
       <div className="flex gap-4 justify-center items-center">
         {pages.slice(startBlock, endBlock).map((page) => (
-          <button key={page} onClick={() => setCurrentPage(page)}>
+          <button key={page} className={`${currentPage == page ? "bg-red-600" : "bg-gray-200"} p-2 rounded-md`} onClick={() => setCurrentPage(page)}>
             {page}
           </button>
         ))}

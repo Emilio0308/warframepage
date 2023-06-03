@@ -38,11 +38,12 @@ const ReosurcesSection = ({ resources, categories , resourcesToShow , setResourc
         endBlock={endBlock}
         pages={pages}
         setCurrentPage={setCurrentPage}
+        currentPage={currentPage}
         currentBlock={currentBlock}
         lastBlock={lastBlock}
         setCurrentBlock={setCurrentBlock}
       />
-      <section className="grid grid-cols-[repeat(auto-fill,_minmax(150px,_1fr))] gap-4">
+      <section className="grid grid-cols-[repeat(auto-fill,_minmax(160px,_1fr))] gap-4 auto-rows-fr">
         {resourcesToShow?.slice(start, end).map((resource) => (
           <ReosourceCard resource={resource} key={resource.uniqueName} />
         ))}
