@@ -8,22 +8,22 @@ const Resources = () => {
   const [typeOfResource, setTypeOfResource] = useState("Resources");
   const [categories, setCategories] = useState([]);
 
-  //   useEffect(() => {
-  //     axiosWarframe
-  //       .get("items")
-  //       .then((res) => {
-  //         const allCategories = [];
-  //         res.data.forEach((item) => {
-  //           if (!allCategories.includes(item.category)) {
-  //             allCategories.push(item.category);
-  //           }
-  //         });
-  //         console.log(allCategories);
-  //       })
-  //       .catch((err) => {
-  //         console.log(err);
-  //       });
-  //   }, []);
+    useEffect(() => {
+      axiosWarframe
+        .get("items")
+        .then((res) => {
+          const allCategories = [];
+          res.data.forEach((item) => {
+            if (!allCategories.includes(item.category)) {
+              allCategories.push(item.category);
+            }
+          });
+          console.log(allCategories);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }, []);
 
   useEffect(() => {
     axiosWarframe("items").then((res) => {
