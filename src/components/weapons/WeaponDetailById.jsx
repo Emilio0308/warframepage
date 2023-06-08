@@ -8,18 +8,19 @@ import WeaponStatistics from "./weaponDetail/WeaponStatistics";
 import WeaponComponents from "./weaponDetail/WeaponComponents";
 import { pagination } from "../../utils/pagination,js";
 import WeaponsButtonsPage from "./weaponDetail/WeaponsButtonsPage";
+import SectionTitle from "../fragmentsUtils/SectionTitle";
 
 const WeaponDetailById = () => {
   const { weaponName } = useParams();
   const [weaponByName, setWeaponByName] = useState();
   const [allWeapons, setAllWeapons] = useState();
-  const [currentPage, setCurrentPage] = useState(1)
+  const [currentPage, setCurrentPage] = useState(1);
   const navigate = useNavigate();
 
   const redirectToWeaponDetailById = (weapon) => {
     navigate(`/weapons/detail/${weapon.name}`);
   };
-  const { start, end, lastPage} = pagination( 10, currentPage , allWeapons)
+  const { start, end, lastPage } = pagination(10, currentPage, allWeapons);
   useEffect(() => {
     axiosWarframe
       .get(`weapons/${weaponName}/`)
@@ -38,13 +39,17 @@ const WeaponDetailById = () => {
 
   return (
     <>
-    <ImgHeader img={"/sectionweapon/nova.jpg"} text={"GET READY FOR WAR!"} />
+      <ImgHeader img={"/sectionweapon/nova.jpg"} text={"GET READY FOR WAR!"} />
       <section className="w-full max-w-[1200px] p-3 mx-auto">
         <h4>{weaponName}</h4>
         <section className="flex flex-col-reverse sm:grid sm:grid-cols-2 gap-5">
           <WeaponDetail currentWeapon={weaponByName} />
           <section className="flex flex-col gap-5">
-            <WeaponsButtonsPage currentPage={currentPage} setCurrentPage={setCurrentPage} lastPage={lastPage} />
+            <WeaponsButtonsPage
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+              lastPage={lastPage}
+            />
             <section className="grid grid-cols-[repeat(auto-fill,_minmax(120px,_1fr))] gap-4 ">
               {allWeapons?.slice(start, end).map((weapon) => (
                 <WeaponCard
@@ -58,7 +63,7 @@ const WeaponDetailById = () => {
         </section>
         <WeaponStatistics currentWeapon={weaponByName} />
         <article className="flex flex-col gap-4">
-          <span className="text-2xl">Components</span>
+          <SectionTitle title={"Components"} />
           <article className="grid sm:grid-cols-2 gap-4">
             {weaponByName?.components?.map((component) => (
               <WeaponComponents

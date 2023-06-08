@@ -10,6 +10,7 @@ import Mods from './pages/Mods'
 import WeaponDetailById from './components/weapons/WeaponDetailById'
 import Resources from './pages/Resources'
 import Sentinels from './pages/Sentinels'
+import SentinelDetailByName from './components/sentinels/SentinelDetailByName'
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
         <Route path='/mods' element={<Mods/>} />
         <Route path='/resources' element={<Resources/>} />
         <Route path='/sentinels' element={<Sentinels/>} />
+        <Route path='/sentinels/:name' element={<SentinelDetailByName/>} />
       </Routes>
      <Footer/>
     </main>

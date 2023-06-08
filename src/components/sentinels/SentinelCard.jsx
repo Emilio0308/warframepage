@@ -1,13 +1,10 @@
+import { Link } from "react-router-dom";
 import { imgUrl } from "../../utils/imgUrl";
 
-const SentinelCard = ({ sentinel , setCurrentSentinel , setShowDetailsModal }) => {
+const SentinelCard = ({ sentinel}) => {
   const { url } = imgUrl(sentinel);
-    const showDetailsOfSentinel = () => {
-        setCurrentSentinel(sentinel) 
-        setShowDetailsModal( prev => !prev )
-    }
   return (
-    <article onClick={ showDetailsOfSentinel } className="grid justify-items-center bg-[#ececec]">
+    <Link to={`/sentinels/${sentinel.name}`} className="grid justify-items-center bg-[#ececec]">
       <div>
         <img src={url} alt={sentinel.name} />
       </div>
@@ -18,7 +15,7 @@ const SentinelCard = ({ sentinel , setCurrentSentinel , setShowDetailsModal }) =
       >
         {sentinel.name}
       </h3>
-    </article>
+    </Link>
   );
 };
 export default SentinelCard;
