@@ -1,13 +1,16 @@
+import SectionComponent from "../../fragmentsUtils/SectionComponent";
 import SectionTitle from "../../fragmentsUtils/SectionTitle";
-import WarframeComponent from "../WarframeComponent";
+
+
 
 const WarframeComponents = ( { warframeName }) => {
   return (
     <article>
       <SectionTitle title={"components"} />
-      <div className="grid gap-4 sm:grid-cols-2 auto-rows-fr">
+      <div className="grid gap-4 md:grid-cols-2 auto-rows-fr">
         {warframeName?.components?.map((component) => (
-          <WarframeComponent key={component.name} component={component} />
+          // <WarframeComponents key={component.name} component={component} />
+          <SectionComponent component={component} />
         ))}
       </div>
     </article>
