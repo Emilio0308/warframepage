@@ -11,6 +11,7 @@ import WeaponDetailById from './components/weapons/WeaponDetailById'
 import Resources from './pages/Resources'
 import Sentinels from './pages/Sentinels'
 import SentinelDetailByName from './components/sentinels/SentinelDetailByName'
+import Quests from './pages/Quests'
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
         <Route path='/resources' element={<Resources/>} />
         <Route path='/sentinels' element={<Sentinels/>} />
         <Route path='/sentinels/:name' element={<SentinelDetailByName/>} />
+        <Route path='/quests' element={ <Quests/>} />
       </Routes>
      <Footer/>
     </main>

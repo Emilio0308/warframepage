@@ -9,7 +9,6 @@ const WarframeComponents = ( { warframeName }) => {
       <SectionTitle title={"components"} />
       <div className="grid gap-4 md:grid-cols-2 auto-rows-fr">
         {warframeName?.components?.map((component) => (
-          // <WarframeComponents key={component.name} component={component} />
           <SectionComponent component={component} />
         ))}
       </div>
