@@ -1,4 +1,5 @@
 import { imgUrl } from "../../../utils/imgUrl";
+import { v4 as uuidv4 } from 'uuid';
 
 const WeaponComponents = ({ component }) => {
   const { url } = imgUrl(component);
@@ -22,9 +23,9 @@ const WeaponComponents = ({ component }) => {
         <p className="w-full break-words">{component?.description}</p>
       </div>
       <div className={`grid gap-2 `}>
-        {component?.drops?.map((drop ,index) => (
+        {component?.drops?.map((drop) => (
           <div
-            key={drop.uniqueName}
+            key={drop.uniqueName + uuidv4()}
             className="grid grid-cols-2 justify-items-center items-center border-[1px] border-gray-300"
           >
             <span className="text-center p-2">{drop.location}</span>

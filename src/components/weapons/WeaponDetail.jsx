@@ -5,7 +5,7 @@ const WeaponDetail = ( {currentWeapon} ) => {
   return (
     <article>
         <article className="py-5 flex flex-col gap-4">
-            <h5 className="text-2xl tracking-[2px]">{currentWeapon?.name}</h5>
+            <h5 className={`text-2xl tracking-[4px] uppercase font-semibold ${currentWeapon?.isPrime? "text-[#c79616]" : "text-red-600"}`}>{currentWeapon?.name}</h5>
             <div className="w-full">
                 <img download="lazy" className="mx-auto" src={ url } alt={currentWeapon?.name} />
             </div>

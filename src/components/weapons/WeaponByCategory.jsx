@@ -9,6 +9,7 @@ import ImgHeader from "../ImgHeader";
 import WeaponsButtonsPage from "./weaponDetail/WeaponsButtonsPage";
 import { pagination } from "../../utils/pagination,js";
 import SectionTitle from "../fragmentsUtils/SectionTitle";
+import { v4 as uuidv4 } from 'uuid';
 
 const WeaponByCategory = () => {
   const { categoryName } = useParams();
@@ -35,7 +36,7 @@ const WeaponByCategory = () => {
   }, []);
   return (
     <>
-      <ImgHeader img={"/sectionweapon/nova.jpg"} text={"GET READY FOR WAR!"} />
+      {/* <ImgHeader img={"/sectionweapon/nova.jpg"} text={"GET READY FOR WAR!"} /> */}
       <section className="max-w-[1200px] mx-auto py-10 p-3">
         <h3 className="uppercase text-3xl tracking-widest text-gray-500 py-5">
           {categoryName}
@@ -70,7 +71,7 @@ const WeaponByCategory = () => {
             <section className="grid grid-cols-[repeat(auto-fill,_minmax(120px,_1fr))] gap-4 ">
               {weaponsByCategory?.slice(start, end).map((weapon) => (
                 <WeaponCard
-                  key={weapon.name + weapon.uniqueName}
+                  key={weapon.name + uuidv4()}
                   weapon={weapon}
                   setCurrentWeapon={setCurrentWeapon}
                 />
@@ -82,9 +83,9 @@ const WeaponByCategory = () => {
         <article className="flex flex-col gap-4">
           <SectionTitle title={"Components"} />
           <section className="grid sm:grid-cols-2 gap-4">
-            {currentWeapon?.components?.map((component, i) => (
+            {currentWeapon?.components?.map((component) => (
               <WeaponComponents
-                key={component.uniqueName}
+                key={uuidv4()}
                 component={component}
               />
             ))}

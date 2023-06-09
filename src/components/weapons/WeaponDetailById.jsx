@@ -9,6 +9,7 @@ import WeaponComponents from "./weaponDetail/WeaponComponents";
 import { pagination } from "../../utils/pagination,js";
 import WeaponsButtonsPage from "./weaponDetail/WeaponsButtonsPage";
 import SectionTitle from "../fragmentsUtils/SectionTitle";
+import { v4 as uuidv4 } from 'uuid';
 
 const WeaponDetailById = () => {
   const { weaponName } = useParams();
@@ -39,9 +40,9 @@ const WeaponDetailById = () => {
 
   return (
     <>
-      <ImgHeader img={"/sectionweapon/nova.jpg"} text={"GET READY FOR WAR!"} />
+      {/* <ImgHeader img={"/sectionweapon/nova.jpg"} text={"GET READY FOR WAR!"} /> */}
       <section className="w-full max-w-[1200px] p-3 mx-auto">
-        <h4>{weaponName}</h4>
+        <h4 className="uppercase tracking-widest text-gray-500 py-5">{weaponName}</h4>
         <section className="flex flex-col-reverse sm:grid sm:grid-cols-2 gap-5">
           <WeaponDetail currentWeapon={weaponByName} />
           <section className="flex flex-col gap-5">
@@ -53,7 +54,7 @@ const WeaponDetailById = () => {
             <section className="grid grid-cols-[repeat(auto-fill,_minmax(120px,_1fr))] gap-4 ">
               {allWeapons?.slice(start, end).map((weapon) => (
                 <WeaponCard
-                  key={weapon.name + weapon.uniqueName}
+                  key={weapon.name + uuidv4()}
                   weapon={weapon}
                   setCurrentWeapon={redirectToWeaponDetailById}
                 />
@@ -67,7 +68,7 @@ const WeaponDetailById = () => {
           <article className="grid sm:grid-cols-2 gap-4">
             {weaponByName?.components?.map((component) => (
               <WeaponComponents
-                key={component.uniqueName + component.description}
+                key={component.uniqueName + uuidv4()}
                 component={component}
               />
             ))}

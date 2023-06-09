@@ -50,8 +50,8 @@ const Mods = () => {
     if (allMods) {
       const listOfCategories = [];
       allMods.forEach((item) => {
-        if (!listOfCategories.includes(item.type)) {
-          listOfCategories.push(item.type);
+        if (!listOfCategories.includes(item.compatName)) {
+          listOfCategories.push(item.compatName);
         }
       });
       setCategories(listOfCategories);
@@ -68,7 +68,7 @@ const Mods = () => {
         allItems={allMods}
         setItemsToShow={setModsToShow}
         categories={categories}
-        nameOfCategory={"type"}
+        nameOfCategory={"compatName"}
         setCurrentPage={setCurrentPage}
         setCurrentBlock={setCurrentBlock}
       />

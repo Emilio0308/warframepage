@@ -1,4 +1,5 @@
 const ComponentsDrop = ( { drop }) => {
+  console.log(drop)
   return (
     <div className="border-b-2 bg-black/10 p-2">
         <h5 className="font-medium">{drop.location}</h5>
