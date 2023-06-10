@@ -8,7 +8,7 @@ const News = () => {
     
     useEffect(() => {
       axiosWarframe.get("pc/news")
-      .then((res)=> setNews(res.data))
+      .then((res)=> setNews(res.data.reverse()))
       .catch((err)=> console.log(err))
     }, [])
 

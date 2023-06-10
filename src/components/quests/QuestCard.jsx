@@ -3,7 +3,6 @@ import SectionTitle from "../fragmentsUtils/SectionTitle";
 
 const QuestCard = ({ currentQuest }) => {
   const { url } = imgUrl(currentQuest);
-  console.log(currentQuest.components);
   return (
     <div>
       <SectionTitle title={currentQuest.name} />
