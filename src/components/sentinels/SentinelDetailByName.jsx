@@ -20,7 +20,7 @@ const SentinelDetailByName = () => {
   }, [name]);
 
   return (
-    <section className="p-3 w-full max-w-[1200px] mx-auto grid  gap-5">
+    <section className="p-3 w-full max-w-[1200px] mx-auto grid pb-[120px] gap-5">
       <article>
         <SentinelMainDetails sentinelByName={sentinelByName} />
       </article>

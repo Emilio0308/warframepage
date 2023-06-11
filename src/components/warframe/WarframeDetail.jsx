@@ -33,7 +33,7 @@ const WarframeDetail = () => {
         </div>
       </section>
       <section className="bg-[#ececec] w-full">
-        <section className="p-3 w-full max-w-[1200px] mx-auto grid gap-20 py-[80px]">
+        <section className="p-3 w-full max-w-[1200px] mx-auto grid gap-20 pt-[80px] pb-[120px]">
           <WarframeDetailAbilities warframeName={warframeName} />
           <WarframeComponents warframeName={warframeName} />
         </section>

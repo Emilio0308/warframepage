@@ -3,6 +3,7 @@ import { useState } from "react";
 import { axiosWarframe } from "../utils/configAxios";
 import SentinelCard from "../components/sentinels/SentinelCard";
 import ImgHeader from "../components/ImgHeader";
+import Loading from "../components/fragmentsUtils/Loading";
 
 const Sentinels = () => {
   const [allSentinels, setAllSentinels] = useState([]);
@@ -27,14 +28,15 @@ const Sentinels = () => {
           <h2 className="text-4xl tracking-[5px] font-medium uppercase py-10">
             SENTINELS
           </h2>
-          <section className="grid grid-cols-[repeat(auto-fill,_minmax(160px,_1fr))] gap-4">
-            {allSentinels.map((sentinel) => (
-              <SentinelCard
-                key={sentinel.uniqueName}
-                sentinel={sentinel}
-              />
-            ))}
-          </section>
+          {allSentinels.length > 1 ? (
+            <section className="grid grid-cols-[repeat(auto-fill,_minmax(160px,_1fr))] gap-4">
+              {allSentinels.map((sentinel) => (
+                <SentinelCard key={sentinel.uniqueName} sentinel={sentinel} />
+              ))}
+            </section>
+          ) : (
+            <Loading/>
+          )}
         </section>
       </section>
     </>

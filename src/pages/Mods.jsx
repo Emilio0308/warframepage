@@ -4,6 +4,7 @@ import FormSearch from "../components/FormSearch";
 import ModCard from "../components/mods/ModCard";
 import { pagination } from "../utils/pagination,js";
 import ImgHeader from "../components/ImgHeader";
+import Loading from "../components/fragmentsUtils/Loading";
 
 const Mods = () => {
   const [allMods, setAllMods] = useState();
@@ -91,11 +92,15 @@ const Mods = () => {
           </div>
           <button onClick={hanldePlussBlock}>{">"}</button>
         </section>
-        <section className="grid grid-cols-[repeat(auto-fill,_minmax(160px,_1fr))] gap-4 auto-rows-fr justify-items-center">
-          {modsToShow?.slice(start, end).map((mod) => (
-            <ModCard key={mod.uniqueName + mod.name} mod={mod} />
-          ))}
-        </section>
+        {modsToShow ? (
+          <section className="grid grid-cols-[repeat(auto-fill,_minmax(160px,_1fr))] gap-4 auto-rows-fr justify-items-center">
+            {modsToShow?.slice(start, end).map((mod) => (
+              <ModCard key={mod.uniqueName + mod.name} mod={mod} />
+            ))}
+          </section>
+        ) : (
+          <Loading />
+        )}
       </section>
     </>
   );

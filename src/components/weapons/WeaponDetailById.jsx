@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { axiosWarframe } from "../../utils/configAxios";
-import ImgHeader from "../ImgHeader";
 import WeaponCard from "./WeaponCard";
 import WeaponDetail from "./WeaponDetail";
 import WeaponStatistics from "./weaponDetail/WeaponStatistics";
@@ -9,7 +8,7 @@ import WeaponComponents from "./weaponDetail/WeaponComponents";
 import { pagination } from "../../utils/pagination,js";
 import WeaponsButtonsPage from "./weaponDetail/WeaponsButtonsPage";
 import SectionTitle from "../fragmentsUtils/SectionTitle";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
 const WeaponDetailById = () => {
   const { weaponName } = useParams();
@@ -39,43 +38,42 @@ const WeaponDetailById = () => {
   }, []);
 
   return (
-    <>
-      {/* <ImgHeader img={"/sectionweapon/nova.jpg"} text={"GET READY FOR WAR!"} /> */}
-      <section className="w-full max-w-[1200px] p-3 mx-auto">
-        <h4 className="uppercase tracking-widest text-gray-500 py-5">{weaponName}</h4>
-        <section className="flex flex-col-reverse sm:grid sm:grid-cols-2 gap-5">
-          <WeaponDetail currentWeapon={weaponByName} />
-          <section className="flex flex-col gap-5">
-            <WeaponsButtonsPage
-              currentPage={currentPage}
-              setCurrentPage={setCurrentPage}
-              lastPage={lastPage}
-            />
-            <section className="grid grid-cols-[repeat(auto-fill,_minmax(120px,_1fr))] gap-4 ">
-              {allWeapons?.slice(start, end).map((weapon) => (
-                <WeaponCard
-                  key={weapon.name + uuidv4()}
-                  weapon={weapon}
-                  setCurrentWeapon={redirectToWeaponDetailById}
-                />
-              ))}
-            </section>
-          </section>
-        </section>
-        <WeaponStatistics currentWeapon={weaponByName} />
-        <article className="flex flex-col gap-4">
-          <SectionTitle title={"Components"} />
-          <article className="grid sm:grid-cols-2 gap-4">
-            {weaponByName?.components?.map((component) => (
-              <WeaponComponents
-                key={component.uniqueName + uuidv4()}
-                component={component}
+    <section className="w-full max-w-[1200px] p-3 mx-auto pb-[120px]">
+      <h4 className="uppercase tracking-widest text-gray-500 py-5">
+        {weaponName}
+      </h4>
+      <section className="flex flex-col-reverse sm:grid sm:grid-cols-2 gap-5">
+        <WeaponDetail currentWeapon={weaponByName} />
+        <section className="flex flex-col gap-5">
+          <WeaponsButtonsPage
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+            lastPage={lastPage}
+          />
+          <section className="grid grid-cols-[repeat(auto-fill,_minmax(120px,_1fr))] gap-4 ">
+            {allWeapons?.slice(start, end).map((weapon) => (
+              <WeaponCard
+                key={weapon.name + uuidv4()}
+                weapon={weapon}
+                setCurrentWeapon={redirectToWeaponDetailById}
               />
             ))}
-          </article>
-        </article>
+          </section>
+        </section>
       </section>
-    </>
+      <WeaponStatistics currentWeapon={weaponByName} />
+      <article className="flex flex-col gap-4">
+        <SectionTitle title={"Components"} />
+        <article className="grid sm:grid-cols-2 gap-4">
+          {weaponByName?.components?.map((component) => (
+            <WeaponComponents
+              key={component.uniqueName + uuidv4()}
+              component={component}
+            />
+          ))}
+        </article>
+      </article>
+    </section>
   );
 };
 export default WeaponDetailById;

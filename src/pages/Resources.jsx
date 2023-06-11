@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { axiosWarframe } from "../utils/configAxios";
 import ReosurcesSection from "../components/resources/ReosurcesSection";
+import Loading from "../components/fragmentsUtils/Loading";
 
 const Resources = () => {
   const [resources, setResources] = useState([]);
@@ -8,22 +9,22 @@ const Resources = () => {
   const [typeOfResource, setTypeOfResource] = useState("Resources");
   const [categories, setCategories] = useState([]);
 
-    useEffect(() => {
-      axiosWarframe
-        .get("items")
-        .then((res) => {
-          const allCategories = [];
-          res.data.forEach((item) => {
-            if (!allCategories.includes(item.category)) {
-              allCategories.push(item.category);
-            }
-          });
-          console.log(allCategories);
-        })
-        .catch((err) => {
-          console.log(err);
+  useEffect(() => {
+    axiosWarframe
+      .get("items")
+      .then((res) => {
+        const allCategories = [];
+        res.data.forEach((item) => {
+          if (!allCategories.includes(item.category)) {
+            allCategories.push(item.category);
+          }
         });
-    }, []);
+        console.log(allCategories);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   useEffect(() => {
     axiosWarframe("items").then((res) => {
@@ -49,7 +50,9 @@ const Resources = () => {
 
   return (
     <section className="w-full max-w-[1200px] mx-auto p-3 pb-[120px]">
-      <h2 className="text-4xl tracking-[5px] font-medium uppercase py-10">resources</h2>
+      <h2 className="text-4xl tracking-[5px] font-medium uppercase py-10">
+        resources
+      </h2>
       <div className="flex gap-5 w-full flex-wrap justify-center font-medium">
         <button
           className="bg-red-600 p-3 rounded-md text-white uppercase w-[115px]"
@@ -94,12 +97,16 @@ const Resources = () => {
           Skins
         </button>
       </div>
-      <ReosurcesSection
-        categories={categories}
-        resources={resources}
-        resourcesToShow={resourcesToShow}
-        setResourcesToShow={setResourcesToShow}
-      />
+      {resourcesToShow ? (
+        <ReosurcesSection
+          categories={categories}
+          resources={resources}
+          resourcesToShow={resourcesToShow}
+          setResourcesToShow={setResourcesToShow}
+        />
+      ) : (
+        <Loading/>
+      )}
     </section>
   );
 };

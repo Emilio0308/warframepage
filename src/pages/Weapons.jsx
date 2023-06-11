@@ -71,7 +71,7 @@ const Weapons = () => {
 
   return (
     <>
-      <ImgHeader img={"/wakeup.jpg"} />
+      <ImgHeader img={"/sectionweapon/wakeup.jpg"} />
       <section className="max-w-[1200px] mx-auto p-3 pb-[120px]">
         <h2 className="text-4xl tracking-[5px] font-medium uppercase py-10">
           WEAPONS
