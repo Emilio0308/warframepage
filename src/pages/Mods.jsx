@@ -57,45 +57,46 @@ const Mods = () => {
       setCategories(listOfCategories);
     }
   }, [allMods]);
-  
 
   return (
     <>
-    <ImgHeader img={"/modsimg/ivara.jpg"} text={"GET READY FOR WAR!"} />
-    <section className="w-full max-w-[1200px] mx-auto p-3">
-        <h2 className="text-4xl tracking-[5px] font-medium uppercase py-10">ALL MODS</h2>
-      <FormSearch
-        allItems={allMods}
-        setItemsToShow={setModsToShow}
-        categories={categories}
-        nameOfCategory={"type"}
-        setCurrentPage={setCurrentPage}
-        setCurrentBlock={setCurrentBlock}
-      />
+      <ImgHeader img={"/modsimg/ivara.jpg"} text={"GET READY FOR WAR!"} />
+      <section className="w-full max-w-[1200px] mx-auto p-3 pb-[120px]">
+        <h2 className="text-4xl tracking-[5px] font-medium uppercase py-10">
+          ALL MODS
+        </h2>
+        <FormSearch
+          allItems={allMods}
+          setItemsToShow={setModsToShow}
+          categories={categories}
+          nameOfCategory={"type"}
+          setCurrentPage={setCurrentPage}
+          setCurrentBlock={setCurrentBlock}
+        />
 
-      <section className="grid grid-cols-[auto,_auto,_auto] gap-4 my-10">
-        <button onClick={hanldeLessBlock}>{"<"}</button>
-        <div className="flex items-center justify-center gap-2">
-          {pages.slice(blockStart, blockEnd).map((page) => (
-            <button
-              key={page}
-              onClick={() => setCurrentPage(page)}
-              className={`${
-                currentPage == page ? "bg-red-600" : "bg-gray-200"
-              } rounded-md p-3 aspect-square`}
-            >
-              {page}
-            </button>
+        <section className="grid grid-cols-[auto,_auto,_auto] gap-4 my-10">
+          <button onClick={hanldeLessBlock}>{"<"}</button>
+          <div className="flex items-center justify-center gap-2">
+            {pages.slice(blockStart, blockEnd).map((page) => (
+              <button
+                key={page}
+                onClick={() => setCurrentPage(page)}
+                className={`${
+                  currentPage == page ? "bg-red-600" : "bg-gray-200"
+                } rounded-md p-3 aspect-square`}
+              >
+                {page}
+              </button>
+            ))}
+          </div>
+          <button onClick={hanldePlussBlock}>{">"}</button>
+        </section>
+        <section className="grid grid-cols-[repeat(auto-fill,_minmax(160px,_1fr))] gap-4 auto-rows-fr justify-items-center">
+          {modsToShow?.slice(start, end).map((mod) => (
+            <ModCard key={mod.uniqueName + mod.name} mod={mod} />
           ))}
-        </div>
-        <button onClick={hanldePlussBlock}>{">"}</button>
+        </section>
       </section>
-      <section className="grid grid-cols-[repeat(auto-fill,_minmax(160px,_1fr))] gap-4 auto-rows-fr justify-items-center">
-        {modsToShow?.slice(start, end).map((mod) => (
-          <ModCard key={mod.uniqueName + mod.name} mod={mod} />
-        ))}
-      </section>
-    </section>
     </>
   );
 };

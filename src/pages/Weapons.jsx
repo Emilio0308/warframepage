@@ -13,11 +13,11 @@ const Weapons = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [currentBlock, setCurrentBlock] = useState(1);
   const [categoryOfWeapons, setCategoryOfWeapons] = useState([]);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const redirectToWeaponDetailById = (weapon) => {
-    navigate(`/weapons/detail/${weapon.name}`)
-  }
+    navigate(`/weapons/detail/${weapon.name}`);
+  };
   const { start, end, lastPage, pages } = pagination(
     20,
     currentPage,
@@ -72,10 +72,10 @@ const Weapons = () => {
   return (
     <>
       <ImgHeader img={"/wakeup.jpg"} />
-      <section className="max-w-[1200px] mx-auto p-3">
-        <h3 className="text-4xl tracking-[5px] font-medium uppercase py-10">
+      <section className="max-w-[1200px] mx-auto p-3 pb-[120px]">
+        <h2 className="text-4xl tracking-[5px] font-medium uppercase py-10">
           WEAPONS
-        </h3>
+        </h2>
         <section className="grid gap-5">
           <h4 className="text-xl text-gray-500 font-medium py-5">
             Weapons by Category
@@ -87,7 +87,9 @@ const Weapons = () => {
           </div>
         </section>
         <section>
-          <h4 className="text-xl text-gray-500 font-medium pt-10">All Weapons</h4>
+          <h4 className="text-xl text-gray-500 font-medium pt-10">
+            All Weapons
+          </h4>
           <FormSearch
             allItems={weapons}
             categories={categoryOfWeapons}

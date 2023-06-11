@@ -22,7 +22,7 @@ const Sentinels = () => {
   return (
     <>
       <ImgHeader img={"./sentinels/ashWithSentinel.jpg"} />
-      <section className="w-full h-full">
+      <section className="w-full h-full pb-[120px]">
         <section className="w-full max-w-[1200px] p-3 mx-auto">
           <h2 className="text-4xl tracking-[5px] font-medium uppercase py-10">
             SENTINELS

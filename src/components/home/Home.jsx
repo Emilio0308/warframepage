@@ -2,12 +2,13 @@ import { Link } from "react-router-dom";
 import News from "./News";
 import InvasionComponent from "./InvasionComponent";
 import LinkHome from "./LinkHome";
+import WarframesHistory from "./WarframesHistory";
 
 const Home = () => {
   return (
     <main>
-      <section className="w-full">
-        <div className="w-full relative pb-20 bg-black">
+      <section className="w-full flex flex-col gap-10 pb-[120px]">
+        <section className="w-full relative pb-20 bg-black">
           <video
             autoPlay
             muted
@@ -30,18 +31,15 @@ const Home = () => {
             />
           </div>
           <div className="absolute w-full h-[calc(100%-80px)] top-0 bg-gradient-to-b from-transparent to-black"></div>
-        </div>
+        </section>
         <section className="p-3">
           <News />
         </section>
-        <section className="p-3 w-full">
+        <WarframesHistory />
+        <section className="p-3">
           <InvasionComponent />
         </section>
-        <section className="bg-[url(/warframeChallenge2.jpeg)] 
-         w-full aspect-[3/5] sm:aspect-[16/9] bg-fixed bg-no-repeat bg-center bg-cover">
-          <div className="">acept the challenge</div>
-        </section>
-        <section className="p-3">
+        <section className="px-3">
           <article className="grid grid-cols-[repeat(auto-fill,_minmax(260px,_1fr))] auto-rows-fr gap-5 max-w-[1200px] mx-auto">
             <LinkHome
               title={"WARFRAMES"}

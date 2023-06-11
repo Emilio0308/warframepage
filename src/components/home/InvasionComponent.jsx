@@ -44,7 +44,7 @@ function InvasionComponent() {
 
   return (
     <section className="w-full max-w-[1200px] mx-auto grid grid-rows-[auto,_1fr]">
-      <h2 className="uppercase py-5 font-bold tracking-[5px] text-red-600">invasions</h2>
+      <h2 className="uppercase py-5 font-bold tracking-[5px] text-red-600 text-2xl">Current invasions</h2>
       <section
         className="w-full border-8 relative h-[240px] overflow-hidden"
         onTouchStart={handleDown}

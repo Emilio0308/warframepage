@@ -48,8 +48,8 @@ const Resources = () => {
   }, [resources]);
 
   return (
-    <section className="w-full max-w-[1200px] mx-auto p-3">
-      <h2 className="uppercase text-2xl py-10">resources</h2>
+    <section className="w-full max-w-[1200px] mx-auto p-3 pb-[120px]">
+      <h2 className="text-4xl tracking-[5px] font-medium uppercase py-10">resources</h2>
       <div className="flex gap-5 w-full flex-wrap justify-center font-medium">
         <button
           className="bg-red-600 p-3 rounded-md text-white uppercase w-[115px]"

@@ -54,7 +54,7 @@ const Warframe = () => {
   return (
     <>
       <ImgHeader img={"/warframes/warframes.jpg"} text={"WELCOME TENNO"}/>
-      <section className="max-w-[1200px] w-full mx-auto p-3 flex flex-col gap-10">
+      <section className="max-w-[1200px] w-full mx-auto p-3 flex flex-col gap-10 pb-[120px]">
         <h2 className="text-4xl tracking-[5px] font-medium uppercase py-10">Warframes</h2>
         <form className="flex gap-5 flex-wrap">
           <div className="flex-grow shadow-md relative">

@@ -19,8 +19,10 @@ const Quests = () => {
   }, []);
 
   return (
-    <section className="w-full max-w-[1200px] mx-auto py-10 p-3">
-      <h3 className="text-3xl tracking-[4px] text-red-600 my-10">QUESTS</h3>
+    <section className="w-full max-w-[1200px] mx-auto px-3 pb-[120px]">
+      <h2 className="text-4xl tracking-[5px] font-medium uppercase py-10">
+        QUESTS
+      </h2>
       <section className="grid sm:grid-cols-[1fr,_2fr] gap-5 pb-10">
         <ListOfQuests allQuest={allQuest} setCurrentQuest={setCurrentQuest} />
         {currentQuest ? (
