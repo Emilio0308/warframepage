@@ -14,7 +14,7 @@ const FormSearch = ({
       setItemsToShow(allItems);
     } else {
       const newListToShow = allItems.filter(
-        (item) => item[nameOfCategory] == category
+        (item) => item[nameOfCategory].includes(category)
       );
       setItemsToShow(newListToShow);
     }

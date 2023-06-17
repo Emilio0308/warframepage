@@ -4,8 +4,6 @@ import { v4 as uuidv4 } from "uuid"
 
 const SectionComponent = ({ component }) => {
     const { url } = imgUrl(component)
-    console.log(component)
-    console.log(url)
   return (
     <div>
         <h5 className="bg-black text-white p-3 uppercase tracking-wide">{component.name}</h5>

@@ -56,6 +56,8 @@ const Resources = lazy(() => import('./pages/Resources'));
 const Sentinels = lazy(() => import('./pages/Sentinels'));
 const SentinelDetailByName = lazy(() => import('./components/sentinels/SentinelDetailByName'));
 const Quests = lazy(() => import('./pages/Quests'));
+const Pets = lazy( () => import('./pages/Pets'))
+const PetBYName = lazy( () => import('./components/pets/PetBYName'))
 
 function App() {
   return (
@@ -74,6 +76,8 @@ function App() {
           <Route path='/sentinels' element={<Sentinels />} />
           <Route path='/sentinels/:name' element={<SentinelDetailByName />} />
           <Route path='/quests' element={<Quests />} />
+          <Route path='/pets' element={<Pets/>} />
+          <Route path='/pets/:name' element={<PetBYName/>} />
         </Routes>
         <Footer />
       </Suspense>

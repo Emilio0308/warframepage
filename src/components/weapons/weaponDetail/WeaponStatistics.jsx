@@ -2,7 +2,7 @@ import SectionTitle from "../../fragmentsUtils/SectionTitle";
 
 const WeaponStatistics = ( { currentWeapon } ) => {
   return (
-    <article className="grid my-10 gap-4">
+    <article className="grid my-10 gap-4 shadow-xl shadow-black/10 p-3 pb-8">
       <SectionTitle title={"Statistics"} />
       <div className="grid grid-cols-2 border-[1px] border-gray-700 p-3">
         <span>accuracy</span>

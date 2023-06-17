@@ -6,6 +6,7 @@ import ImgHeader from "../components/ImgHeader";
 import FormSearch from "../components/FormSearch";
 import { pagination } from "../utils/pagination,js";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Weapons = () => {
   const [weapons, setWeapons] = useState();
@@ -41,14 +42,26 @@ const Weapons = () => {
       setCurrentBlock(newBlock);
     }
   };
-
   useEffect(() => {
+    // Creamos una variable para almacenar la fuente de cancelación
+    const source = axios.CancelToken.source();
     axiosWarframe
-      .get("weapons/")
+      .get("weapons/", { cancelToken: source.token })
       .then((res) => {
         setWeapons(res.data);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        if (axios.isCancel(err)) {
+          // La petición fue cancelada
+          console.log("Petición cancelada:", err.message);
+        } else {
+          console.log("Error:", err);
+        }
+      });
+    // Función para cancelar la petición si el componente se desmonta antes de completarse
+    return () => {
+      source.cancel("Componente desmontado");
+    };
   }, []);
 
   useEffect(() => {

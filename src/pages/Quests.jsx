@@ -4,6 +4,7 @@ import QuestCard from "../components/quests/QuestCard";
 import ListOfQuests from "../components/quests/ListOfQuests";
 import SectionComponent from "../components/fragmentsUtils/SectionComponent";
 import Loading from "../components/fragmentsUtils/Loading";
+import { v4 as uuidv4 } from "uuid";
 
 const Quests = () => {
   const [allQuest, setAllQuest] = useState([]);
@@ -13,7 +14,6 @@ const Quests = () => {
       .get("/items")
       .then((res) => {
         const listQuests = res.data.filter((item) => item.category == "Quests");
-        console.log(listQuests);
         setAllQuest(listQuests);
       })
       .catch((err) => console.log(err));
@@ -49,7 +49,7 @@ const Quests = () => {
           <div className="grid gap-4 sm:grid-cols-2">
             {currentQuest?.components
               ? currentQuest.components.map((component) => (
-                  <SectionComponent component={component} />
+                  <SectionComponent component={component} key={uuidv4()} />
                 ))
               : ""}
           </div>

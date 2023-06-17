@@ -83,7 +83,12 @@ const Home = () => {
               route={"/quests"}
               alt={"quest sections"}
             />
-            <Link to="/warframes">WARFRAMES </Link>
+            <LinkHome
+              title={"PETS"}
+              img={"/home/links/pets.jpg"}
+              route={"/pets"}
+              alt={"pets sections"}
+            />
           </article>
         </section>
       </section>
