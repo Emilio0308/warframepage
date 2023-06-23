@@ -1,6 +1,6 @@
 const WarframesHistory = () => {
   return (
-    <section className="bg-[url(/warframeChallenge2.jpeg)] w-full bg-fixed bg-no-repeat bg-center bg-cover px-3">
+    <section className="bg-[url(/warframeChallenge2.webp)] w-full bg-fixed bg-no-repeat bg-center bg-cover px-3">
       <div className="w-full h-full max-w-[1200px] mx-auto flex items-end">
         <article className="text-white w-full max-w-[500px] grid gap-4 bg-black/70 py-8 px-3 mt-[300px]">
           <h2 className="text-red-600 text-3xl font-bold tracking-[8px] pb-10">
@@ -23,9 +23,9 @@ const WarframesHistory = () => {
             debes estar preparado. Lotus te enseñará cómo usar los warframes y
             los secretos para desbloquear sus poderes.
           </p>
-          <h5 className="text-center font-semibold tracking-widest text-xl">
+          <h3 className="text-center font-semibold tracking-widest text-xl">
             VEN, TENNO, DEBES UNIRTE A LA GUERRA.
-          </h5>
+          </h3>
         </article>
       </div>
     </section>

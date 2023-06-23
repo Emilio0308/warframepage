@@ -43,19 +43,19 @@ const Home = () => {
           <article className="grid grid-cols-[repeat(auto-fill,_minmax(260px,_1fr))] auto-rows-fr gap-5 max-w-[1200px] mx-auto">
             <LinkHome
               title={"WARFRAMES"}
-              img={"/home/links/warframes.jpg"}
+              img={"/home/links/warframes.webp"}
               route={"/warframes"}
               alt={"warframe sections"}
             />
             <LinkHome
               title={"WEAPONS"}
-              img={"/home/links/weapons.jpeg"}
+              img={"/home/links/weapons.webp"}
               route={"/weapons"}
               alt={"weapons sections"}
             />
             <LinkHome
               title={"CYCLES"}
-              img={"/home/links/cycles.jpg"}
+              img={"/home/links/cycles.webp"}
               route={"/cycles"}
               alt={"cycles sections"}
             />
@@ -67,7 +67,7 @@ const Home = () => {
             />
             <LinkHome
               title={"RESOURCES"}
-              img={"/home/links/resources.jpeg"}
+              img={"/home/links/resources.webp"}
               route={"/resources"}
               alt={"resources sections"}
             />
@@ -85,7 +85,7 @@ const Home = () => {
             />
             <LinkHome
               title={"PETS"}
-              img={"/home/links/pets.jpg"}
+              img={"/home/links/pets.webp"}
               route={"/pets"}
               alt={"pets sections"}
             />

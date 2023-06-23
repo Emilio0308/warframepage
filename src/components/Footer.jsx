@@ -4,7 +4,7 @@ const Footer = () => {
       <footer className="w-full bg-gray-300 p-3">
         <section className="w-full max-w-[1200px] grid grid-cols-[repeat(auto-fill,_minmax(220px,_1fr))] auto-rows-fr gap-8 mx-auto py-20">
           <div className="grid grid-rows-[60px,_1fr]">
-            <span className="uppercase text-xl tracking-[5px] font-semibold text-gray-700">
+            <span className="uppercase text-xl tracking-[5px] font-semibold text-gray-800">
               fandon page
             </span>
             <div className="w-[70%] min-w-[200px]">
@@ -12,38 +12,38 @@ const Footer = () => {
             </div>
           </div>
           <div className="grid grid-rows-[60px,_1fr]">
-            <span className="uppercase font-medium text-xl text-gray-700">
+            <span className="uppercase font-medium text-xl text-gray-800">
               Links
             </span>
             <ul>
-              <li>
-                <a href="/warframes">Warframe</a>
+              <li className="w-[100px] py-2">
+                <a className="w-full" href="/warframes">Warframe</a>
               </li>
-              <li>
-                <a href="/weapons">Weapons</a>
+              <li className="w-[100px] py-2">
+                <a className="w-full" href="/weapons">Weapons</a>
               </li>
-              <li>
-                <a href="/sentinels">Sentinels</a>
+              <li className="w-[100px] py-2">
+                <a className="w-full" href="/sentinels">Sentinels</a>
               </li>
-              <li>
-                <a href="/resources">Resources</a>
+              <li className="w-[100px] py-2">
+                <a className="w-full" href="/resources">Resources</a>
               </li>
-              <li>
-                <a href="/mods">Mods</a>
+              <li className="w-[100px] py-2">
+                <a className="w-full" href="/mods">Mods</a>
               </li>
-              <li>
-                <a href="/cycles">Planets cycles</a>
+              <li className="w-[100px] py-2">
+                <a className="w-full" href="/cycles">Planets cycles</a>
               </li>
-              <li>
-                <a href="/quests">Quests</a>
+              <li className="w-[100px] py-2">
+                <a className="w-full" href="/quests">Quests</a>
               </li>
-              <li>
-                <a href="/weapons">Weapons</a>
+              <li className="w-[100px] py-2">
+                <a className="w-full" href="/weapons">Weapons</a>
               </li>
             </ul>
           </div>
           <div className="grid grid-rows-[60px,_1fr,_auto]">
-            <span className="uppercase font-medium text-xl text-gray-700">
+            <span className="uppercase font-medium text-xl text-gray-800">
               This website
             </span>
             <p>
@@ -59,7 +59,7 @@ const Footer = () => {
               .
             </p>
             <a
-              className="italic capitalize text-blue-600"
+              className="italic capitalize text-blue-700"
               target="_blank"
               href="https://www.warframe.com/es"
             >
