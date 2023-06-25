@@ -19,7 +19,6 @@ const Resources = () => {
             allCategories.push(item.category);
           }
         });
-        console.log(allCategories);
       })
       .catch((err) => {
         console.log(err);
@@ -105,7 +104,7 @@ const Resources = () => {
           setResourcesToShow={setResourcesToShow}
         />
       ) : (
-        <Loading/>
+        <Loading />
       )}
     </section>
   );

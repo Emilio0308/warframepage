@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { axiosWarframe } from "../utils/configAxios";
-import FormSearch from "../components/FormSearch";
-import ModCard from "../components/mods/ModCard";
 import { pagination } from "../utils/pagination,js";
 import ImgHeader from "../components/ImgHeader";
+import FormSearch from "../components/FormSearch";
 import Loading from "../components/fragmentsUtils/Loading";
+import ReosourceCard from "../components/resources/ReosourceCard";
+import PaginationBlocks from "./../components/PaginationBlocks";
 
 const Mods = () => {
   const [allMods, setAllMods] = useState();
@@ -24,19 +25,6 @@ const Mods = () => {
     end: blockEnd,
     lastPage: lastBlock,
   } = pagination(5, currentBlock, pages);
-
-  const hanldePlussBlock = () => {
-    const newBlock = currentBlock + 1;
-    if (newBlock <= lastBlock) {
-      setCurrentBlock(newBlock);
-    }
-  };
-  const hanldeLessBlock = () => {
-    const newBlock = currentBlock - 1;
-    if (newBlock > 0) {
-      setCurrentBlock(newBlock);
-    }
-  };
 
   useEffect(() => {
     axiosWarframe
@@ -74,28 +62,25 @@ const Mods = () => {
           setCurrentPage={setCurrentPage}
           setCurrentBlock={setCurrentBlock}
         />
-
-        <section className="grid grid-cols-[auto,_auto,_auto] gap-4 my-10">
-          <button onClick={hanldeLessBlock}>{"<"}</button>
-          <div className="flex items-center justify-center gap-2">
-            {pages.slice(blockStart, blockEnd).map((page) => (
-              <button
-                key={page}
-                onClick={() => setCurrentPage(page)}
-                className={`${
-                  currentPage == page ? "bg-red-600" : "bg-gray-200"
-                } rounded-md p-3 aspect-square`}
-              >
-                {page}
-              </button>
-            ))}
-          </div>
-          <button onClick={hanldePlussBlock}>{">"}</button>
-        </section>
+        <PaginationBlocks
+          pages={pages}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          currentBlock={currentBlock}
+          setCurrentBlock={setCurrentBlock}
+          startBlock={blockStart}
+          endBlock={blockEnd}
+          lastBlock={lastBlock}
+        />
         {modsToShow ? (
           <section className="grid grid-cols-[repeat(auto-fill,_minmax(160px,_1fr))] gap-4 auto-rows-fr justify-items-center">
             {modsToShow?.slice(start, end).map((mod) => (
-              <ModCard key={mod.uniqueName + mod.name} mod={mod} />
+              <ReosourceCard
+                key={mod.uniqueName}
+                resource={mod}
+                path={"mods"}
+                param={mod.name + "-" + mod.levelStats?.length}
+              />
             ))}
           </section>
         ) : (

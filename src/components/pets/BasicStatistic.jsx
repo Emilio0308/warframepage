@@ -1,4 +1,5 @@
 const BasicStatistic = ( { element }) => {
+  console.log(element)
   return (
     <div className="grid grid-cols-4 uppercase font-bold my-5">
       <div className="grid justify-items-center">

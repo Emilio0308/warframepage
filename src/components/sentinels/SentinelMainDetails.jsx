@@ -14,7 +14,7 @@ const SentinelMainDetails = ({ sentinelByName }) => {
         {sentinelByName.name}
       </h4>
       <div className="flex justify-center items-center">
-        <img src={url} alt={sentinelByName.name} />
+        <img src={url} alt={sentinelByName.name} loading="lazy" />
       </div>
       <div className="grid grid-cols-4 uppercase font-bold my-5">
         <div className="grid justify-items-center">

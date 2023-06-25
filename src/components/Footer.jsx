@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <>
       <footer className="w-full bg-gray-300 p-3">
-        <section className="w-full max-w-[1200px] grid grid-cols-[repeat(auto-fill,_minmax(220px,_1fr))] auto-rows-fr gap-8 mx-auto py-20">
+        <section className="w-full max-w-[1200px] grid grid-cols-[repeat(auto-fill,_minmax(220px,_1fr))] auto-rows-fr gap-8 mx-auto pt-20">
           <div className="grid grid-rows-[60px,_1fr]">
             <span className="uppercase text-xl tracking-[5px] font-semibold text-gray-800">
               fandon page

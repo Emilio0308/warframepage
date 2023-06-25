@@ -26,7 +26,13 @@ const PaginationBlocks = ({
       <button onClick={hanldeLessBlock}>{"<"}</button>
       <div className="flex gap-4 justify-center items-center">
         {pages.slice(startBlock, endBlock).map((page) => (
-          <button key={page} className={`${currentPage == page ? "bg-red-600" : "bg-gray-200"} p-2 rounded-md`} onClick={() => setCurrentPage(page)}>
+          <button
+            key={page}
+            className={`${
+              currentPage == page ? "bg-red-600" : "bg-gray-200"
+            } p-2 rounded-md`}
+            onClick={() => setCurrentPage(page)}
+          >
             {page}
           </button>
         ))}
