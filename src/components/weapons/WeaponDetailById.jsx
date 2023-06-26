@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
 import { axiosWarframe } from "../../utils/configAxios";
+import { pagination } from "../../utils/pagination,js";
+import SectionTitle from "../fragmentsUtils/SectionTitle";
 import WeaponCard from "./WeaponCard";
 import WeaponDetail from "./WeaponDetail";
-import WeaponStatistics from "./weaponDetail/WeaponStatistics";
 import WeaponComponents from "./weaponDetail/WeaponComponents";
-import { pagination } from "../../utils/pagination,js";
+import WeaponStatistics from "./weaponDetail/WeaponStatistics";
 import WeaponsButtonsPage from "./weaponDetail/WeaponsButtonsPage";
-import SectionTitle from "../fragmentsUtils/SectionTitle";
-import { v4 as uuidv4 } from "uuid";
 
 const WeaponDetailById = () => {
   const { weaponName } = useParams();
@@ -38,7 +38,7 @@ const WeaponDetailById = () => {
   }, []);
 
   return (
-    <section className="w-full max-w-[1200px] p-3 mx-auto pb-[120px]">
+    <section className="w-full max-w-[1200px] p-3 mx-auto pb-[120px] md:mt-[60px]">
       <h4 className="uppercase tracking-widest text-gray-500 py-5">
         {weaponName}
       </h4>

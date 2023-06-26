@@ -1,7 +1,8 @@
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
-import Home from "./components/home/Home";
 import Loading from "./components/fragmentsUtils/Loading";
+import NavBar from "./components/fragmentsUtils/NavBar";
+import Home from "./components/home/Home";
 
 // Importa los componentes que deseas cargar de forma dinámica
 const Warframe = lazy(() => import("./pages/Warframe"));
@@ -15,7 +16,7 @@ const WeaponByCategory = lazy(() =>
 const PlanetsCycle = lazy(() => import("./pages/PlanetsCycle"));
 const Footer = lazy(() => import("./components/Footer"));
 const Mods = lazy(() => import("./pages/Mods"));
-const ModByName = lazy(() => import("./components/mods/ModByName"))
+const ModByName = lazy(() => import("./components/mods/ModByName"));
 const WeaponDetailById = lazy(() =>
   import("./components/weapons/WeaponDetailById")
 );
@@ -35,6 +36,7 @@ function App() {
   return (
     <main className="font-sans">
       <Suspense fallback={<Loading />}>
+        <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/warframes" element={<Warframe />} />
@@ -47,7 +49,7 @@ function App() {
           />
           <Route path="/cycles" element={<PlanetsCycle />} />
           <Route path="/mods" element={<Mods />} />
-          <Route path="/mods/:name" element={<ModByName/>} />
+          <Route path="/mods/:name" element={<ModByName />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/resources/:name" element={<ResourcesDetailByName />} />
           <Route path="/sentinels" element={<Sentinels />} />

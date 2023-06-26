@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaSearch } from "react-icons/fa";
 
 const FormSearch = ({
   categories,
@@ -45,8 +46,8 @@ const FormSearch = ({
           type="text"
         />
       </div>
-      <button onClick={hanldeSearchByName} className="h-[60px]">
-        search
+      <button onClick={hanldeSearchByName} className="h-[60px] text-3xl p-3">
+        <FaSearch />
       </button>
       <select
         className="h-[60px] w-[150px]"

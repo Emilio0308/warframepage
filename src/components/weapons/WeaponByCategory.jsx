@@ -34,7 +34,7 @@ const WeaponByCategory = () => {
       .catch((err) => console.log(err));
   }, []);
   return (
-    <section className="max-w-[1200px] mx-auto py-10 p-3 pb-[120px]">
+    <section className="max-w-[1200px] mx-auto py-10 p-3 pb-[120px] md:mt-[60px]">
       <h3 className="uppercase text-3xl tracking-widest text-gray-500 py-5">
         {categoryName}
       </h3>

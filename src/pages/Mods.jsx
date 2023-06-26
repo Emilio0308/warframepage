@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { axiosWarframe } from "../utils/configAxios";
-import { pagination } from "../utils/pagination,js";
-import ImgHeader from "../components/ImgHeader";
 import FormSearch from "../components/FormSearch";
+import ImgHeader from "../components/ImgHeader";
 import Loading from "../components/fragmentsUtils/Loading";
 import ReosourceCard from "../components/resources/ReosourceCard";
+import { axiosWarframe } from "../utils/configAxios";
+import { pagination } from "../utils/pagination,js";
 import PaginationBlocks from "./../components/PaginationBlocks";
 
 const Mods = () => {

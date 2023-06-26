@@ -21,7 +21,7 @@ const ResourcesDetailByName = () => {
 
   return (
     <section className="p-3">
-      <section className="w-full mx-auto max-w-[1200px] pb-[120px]">
+      <section className="w-full mx-auto max-w-[1200px] pb-[120px] lg:mt-[60px]">
         <HeaderPageDetail item={resourcesDetailByName} />
         <ResourcesDetailSection resourcesDetailByName={resourcesDetailByName} />
       </section>

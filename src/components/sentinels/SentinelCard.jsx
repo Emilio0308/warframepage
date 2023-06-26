@@ -6,7 +6,7 @@ const SentinelCard = ({ sentinel}) => {
   return (
     <Link to={`/sentinels/${sentinel.name}`} className="grid justify-items-center bg-[#ececec]">
       <div>
-        <img src={url} alt={sentinel.name} />
+        <img src={url} alt={sentinel.name} download="lazy" />
       </div>
       <h3
         className={`${

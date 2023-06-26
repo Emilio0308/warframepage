@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { axiosWarframe } from "../utils/configAxios";
-import QuestCard from "../components/quests/QuestCard";
-import ListOfQuests from "../components/quests/ListOfQuests";
-import SectionComponent from "../components/fragmentsUtils/SectionComponent";
-import Loading from "../components/fragmentsUtils/Loading";
 import { v4 as uuidv4 } from "uuid";
+import Loading from "../components/fragmentsUtils/Loading";
+import SectionComponent from "../components/fragmentsUtils/SectionComponent";
+import ListOfQuests from "../components/quests/ListOfQuests";
+import QuestCard from "../components/quests/QuestCard";
+import { axiosWarframe } from "../utils/configAxios";
 
 const Quests = () => {
   const [allQuest, setAllQuest] = useState([]);
@@ -20,7 +20,7 @@ const Quests = () => {
   }, []);
 
   return (
-    <section className="w-full max-w-[1200px] mx-auto px-3 pb-[120px]">
+    <section className="w-full max-w-[1200px] mx-auto px-3 pb-[120px] lg:mt-[60px]">
       <h2 className="text-4xl tracking-[5px] font-medium uppercase py-10">
         QUESTS
       </h2>

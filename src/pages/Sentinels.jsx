@@ -1,9 +1,8 @@
-import { useEffect } from "react";
-import { useState } from "react";
-import { axiosWarframe } from "../utils/configAxios";
-import SentinelCard from "../components/sentinels/SentinelCard";
+import { useEffect, useState } from "react";
 import ImgHeader from "../components/ImgHeader";
 import Loading from "../components/fragmentsUtils/Loading";
+import SentinelCard from "../components/sentinels/SentinelCard";
+import { axiosWarframe } from "../utils/configAxios";
 
 const Sentinels = () => {
   const [allSentinels, setAllSentinels] = useState([]);

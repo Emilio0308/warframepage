@@ -1,6 +1,6 @@
 const ImgHeader = ( { img , text } ) => {
   return (
-    <div className="relative h-[100vh] w-full overflow-hidden flex justify-center items-center">
+    <div className="relative h-[100vh] w-full overflow-hidden flex justify-center items-center lg:mt-[60px]">
       <img
         className="h-full max-w-none w-full object-cover"
         src={img}

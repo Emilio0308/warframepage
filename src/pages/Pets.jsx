@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { axiosWarframe } from "../utils/configAxios";
-import SectionPets from "../components/pets/SectionPets";
 import Loading from "../components/fragmentsUtils/Loading";
+import SectionPets from "../components/pets/SectionPets";
+import { axiosWarframe } from "../utils/configAxios";
 
 const Pets = () => {
   const [allPets, setAllPets] = useState();
@@ -29,7 +29,7 @@ const Pets = () => {
   }, [allPets]);
 
   return (
-    <section className="w-full p-3">
+    <section className="w-full p-3 lg:mt-[60px]">
       <section className="w-full max-w-[1200px] mx-auto mb-[120px]">
         <h2 className="text-4xl tracking-[5px] font-medium uppercase py-10">
           pets

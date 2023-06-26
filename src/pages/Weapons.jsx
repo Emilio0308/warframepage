@@ -1,12 +1,16 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
-import { axiosWarframe } from "../utils/configAxios";
+import {
+  FaRegArrowAltCircleLeft,
+  FaRegArrowAltCircleRight,
+} from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import FormSearch from "../components/FormSearch";
+import ImgHeader from "../components/ImgHeader";
 import WeaponCard from "../components/weapons/WeaponCard";
 import { WeaponCategoryLink } from "../components/weapons/WeaponCategoryLink";
-import ImgHeader from "../components/ImgHeader";
-import FormSearch from "../components/FormSearch";
+import { axiosWarframe } from "../utils/configAxios";
 import { pagination } from "../utils/pagination,js";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
 
 const Weapons = () => {
   const [weapons, setWeapons] = useState();
@@ -112,7 +116,9 @@ const Weapons = () => {
             setCurrentBlock={setCurrentBlock}
           />
           <section className="grid grid-cols-[repeat(3,_auto)] py-10">
-            <button onClick={handleLessBlock}>prev</button>
+            <button className="mx-auto text-3xl" onClick={handleLessBlock}>
+              <FaRegArrowAltCircleLeft />
+            </button>
             <div className="flex gap-2 justify-center items-center">
               {pages.slice(blockStart, blockEnd).map((page) => (
                 <button
@@ -120,13 +126,15 @@ const Weapons = () => {
                   onClick={() => setCurrentPage(page)}
                   className={`${
                     currentPage == page ? "bg-red-600" : "bg-gray-200"
-                  } rounded-md p-3 aspect-square`}
+                  } rounded-md w-[25px] sm:w-[35px] h-[45px] shadow-md shadow-black/60 font-medium`}
                 >
                   {page}
                 </button>
               ))}
             </div>
-            <button onClick={handlePlussBlock}>next</button>
+            <button className="mx-auto text-3xl" onClick={handlePlussBlock}>
+              <FaRegArrowAltCircleRight />
+            </button>
           </section>
           <section className="grid grid-cols-[repeat(auto-fill,_minmax(120px,_1fr))] gap-4 auto-rows-fr">
             {weaponsToShow?.slice(start, end).map((weapon) => (

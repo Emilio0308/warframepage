@@ -22,7 +22,7 @@ const SentinelDetailByName = () => {
   }, [name]);
 
   return (
-    <section className="p-3 w-full max-w-[1200px] mx-auto grid pb-[120px] gap-5">
+    <section className="p-3 w-full max-w-[1200px] mx-auto grid pb-[120px] gap-5 lg:mt-[60px]">
       <article>
         <TitlePageDetail
           title={sentinelByName.category}

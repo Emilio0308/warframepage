@@ -32,7 +32,7 @@ const ModByName = () => {
   }, []);
 
   return (
-    <section className="p-3 bg-[url(/warframes/warframesdetailbg2.jpg)] bg-fixed">
+    <section className="p-3 bg-[url(/warframes/warframesdetailbg2.jpg)] bg-fixed lg:mt-[60px]">
       <section className="w-full mx-auto max-w-[1200px] mb-[120px] flex flex-col gap-10">
         <article className="grid sm:grid-cols-2 gap-10">
           <HeaderPageDetail item={modByName} />

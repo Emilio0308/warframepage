@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { axiosWarframe } from "../utils/configAxios";
-import ReosurcesSection from "../components/resources/ReosurcesSection";
 import Loading from "../components/fragmentsUtils/Loading";
+import ReosurcesSection from "../components/resources/ReosurcesSection";
+import { axiosWarframe } from "../utils/configAxios";
 
 const Resources = () => {
   const [resources, setResources] = useState([]);
@@ -48,7 +48,7 @@ const Resources = () => {
   }, [resources]);
 
   return (
-    <section className="w-full max-w-[1200px] mx-auto p-3 pb-[120px]">
+    <section className="w-full max-w-[1200px] mx-auto p-3 pb-[120px] lg:mt-[60px]">
       <h2 className="text-4xl tracking-[5px] font-medium uppercase py-10">
         resources
       </h2>

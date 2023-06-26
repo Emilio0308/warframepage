@@ -45,17 +45,6 @@ const WeaponDetail = ( {currentWeapon} ) => {
         <p className="py-5">
             {currentWeapon?.description}
         </p>
-
-        {/* <WeaponStatistics currentWeapon={currentWeapon}/> */}
-
-        {/* <article className="flex flex-col gap-4">
-            <span className="text-2xl">Components</span>
-            <section className="grid gap-4">
-                {
-                    currentWeapon.components?.map( (component) => <WeaponComponents key={component.uniqueName} component={component}/>)
-                }
-            </section>
-        </article> */}
     </article>
   )
 }

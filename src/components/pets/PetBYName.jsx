@@ -35,7 +35,7 @@ const PetBYName = () => {
   }, []);
 
   return (
-    <section className="p-3">
+    <section className="p-3 lg:mt-[60px]">
       <section className="w-full max-w-[1200px] mx-auto mb-[120px]">
         <HeaderPageDetail
           item={petByName}

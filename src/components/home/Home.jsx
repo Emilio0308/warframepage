@@ -1,13 +1,12 @@
-import { Link } from "react-router-dom";
-import News from "./News";
 import InvasionComponent from "./InvasionComponent";
 import LinkHome from "./LinkHome";
+import News from "./News";
 import WarframesHistory from "./WarframesHistory";
 
 const Home = () => {
   return (
     <main>
-      <section className="w-full flex flex-col gap-10 pb-[120px]">
+      <section className="w-full flex flex-col gap-10 pb-[120px] lg:mt-[60px]">
         <section className="w-full relative pb-20 bg-black">
           <video
             autoPlay

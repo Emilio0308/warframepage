@@ -13,12 +13,12 @@ const PatchlogsComponent = ({ patchlogs }) => {
             <div className="text-xl border-b-2 border-gray-700 bg-black text-white p-2">
               {patchlog.name}
             </div>
-            <div className="grid grid-cols-2 items-center justify-items-center py-3 px-2">
-              <div className="grid auto-rows-auto">
-                <span>{patchlog.fixes}</span>
-                <span>{patchlog.changes}</span>
+            <div className="grid md:grid-cols-[1fr,_200px] items-center justify-items-center py-3 px-2">
+              <div className="grid auto-rows-auto max-h-[300px] overflow-y-auto">
+                <span className="break-words overflow-hidden w-full">{patchlog.fixes}</span>
+                <span className="break-words overflow-hidden w-full">{patchlog.changes}</span>
               </div>
-              <div className="text-center">{getDate(patchlog.date)}</div>
+              <div className="text-center py-3">{getDate(patchlog.date)}</div>
             </div>
           </div>
         ))}
