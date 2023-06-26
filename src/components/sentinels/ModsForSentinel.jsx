@@ -4,14 +4,16 @@ import ReosourceCard from "../resources/ReosourceCard";
 
 const ModsForSentinel = ({ sentinelByName }) => {
   const [listOfModsByName, setListOfModsByName] = useState([]);
+
   useEffect(() => {
     axiosWarframe
-      .get("https://api.warframestat.us/mods/")
+      .get(`mods/search/${sentinelByName}`, {
+        params: {
+          by: "compatName",
+        },
+      })
       .then((res) => {
-        const listOfMods = res.data.filter(
-          (mod) => mod.compatName === sentinelByName
-        );
-        setListOfModsByName(listOfMods);
+        setListOfModsByName(res.data);
       })
       .catch();
   }, []);
@@ -22,7 +24,7 @@ const ModsForSentinel = ({ sentinelByName }) => {
         <ReosourceCard
           resource={mod}
           path={"mods"}
-          param={mod.name + "-" +mod.levelStats?.length}
+          param={mod.name + "-" + mod.levelStats?.length}
           key={mod.name}
         />
       ))}

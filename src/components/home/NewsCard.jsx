@@ -12,7 +12,7 @@ const NewsCard = ( { newInfo }) => {
             <span className="absolute left-2 bottom-2 text-white">{getDate(newInfo.date)}</span>
         </div>
         <div className="p-2 text-lg w-full text-white relative">
-          <span>{newInfo.message}</span>
+          <span>{newInfo.translations.en || newInfo.message}</span>
           <a className="absolute flex justify-center items-center gap-4 right-2 bottom-2" target="_blank" href={newInfo.link}>View more <FaExternalLinkAlt/></a>
         </div>
     </article>

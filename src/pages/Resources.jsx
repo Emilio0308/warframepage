@@ -26,12 +26,13 @@ const Resources = () => {
   }, []);
 
   useEffect(() => {
-    axiosWarframe("items").then((res) => {
-      const resourcesData = res.data.filter(
-        (element) => element.category == typeOfResource
-      );
-      setResources(resourcesData);
-      setResourcesToShow(resourcesData);
+    axiosWarframe(`items/search/${typeOfResource}`, {
+      params: {
+        by: "category",
+      },
+    }).then((res) => {
+      setResources(res.data);
+      setResourcesToShow(res.data);
     });
   }, [typeOfResource]);
 
@@ -54,42 +55,54 @@ const Resources = () => {
       </h2>
       <div className="flex gap-5 w-full flex-wrap justify-center font-medium">
         <button
-          className="bg-red-600 p-3 rounded-md text-white uppercase w-[115px]"
+          className={`${
+            typeOfResource == "Resources" ? "bg-red-600" : "bg-blue-500"
+          } p-3 rounded-md text-white uppercase w-[115px]`}
           onClick={(e) => setTypeOfResource(e.target.value)}
           value="Resources"
         >
           Resources
         </button>
         <button
-          className="bg-red-600 p-3 rounded-md text-white uppercase w-[115px]"
+          className={`${
+            typeOfResource == "Gear" ? "bg-red-600" : "bg-blue-500"
+          } p-3 rounded-md text-white uppercase w-[115px]`}
           onClick={(e) => setTypeOfResource(e.target.value)}
           value="Gear"
         >
           Gear
         </button>
         <button
-          className="bg-red-600 p-3 rounded-md text-white uppercase w-[115px]"
+          className={`${
+            typeOfResource == "Fish" ? "bg-red-600" : "bg-blue-500"
+          } p-3 rounded-md text-white uppercase w-[115px]`}
           onClick={(e) => setTypeOfResource(e.target.value)}
           value="Fish"
         >
           Fish
         </button>
         <button
-          className="bg-red-600 p-3 rounded-md text-white uppercase w-[115px]"
+          className={`${
+            typeOfResource == "Relics" ? "bg-red-600" : "bg-blue-500"
+          } p-3 rounded-md text-white uppercase w-[115px]`}
           onClick={(e) => setTypeOfResource(e.target.value)}
           value="Relics"
         >
           Relics
         </button>
         <button
-          className="bg-red-600 p-3 rounded-md text-white uppercase w-[115px]"
+          className={`${
+            typeOfResource == "Sigils" ? "bg-red-600" : "bg-blue-500"
+          } p-3 rounded-md text-white uppercase w-[115px]`}
           onClick={(e) => setTypeOfResource(e.target.value)}
           value="Sigils"
         >
           Sigils
         </button>
         <button
-          className="bg-red-600 p-3 rounded-md text-white uppercase w-[115px]"
+          className={`${
+            typeOfResource == "Skins" ? "bg-red-600" : "bg-blue-500"
+          } p-3 rounded-md text-white uppercase w-[115px]`}
           onClick={(e) => setTypeOfResource(e.target.value)}
           value="Skins"
         >

@@ -11,10 +11,13 @@ const Quests = () => {
   const [currentQuest, setCurrentQuest] = useState();
   useEffect(() => {
     axiosWarframe
-      .get("/items")
+      .get("items/search/Quests", {
+        params: {
+          by: "category",
+        },
+      })
       .then((res) => {
-        const listQuests = res.data.filter((item) => item.category == "Quests");
-        setAllQuest(listQuests);
+        setAllQuest(res.data);
       })
       .catch((err) => console.log(err));
   }, []);

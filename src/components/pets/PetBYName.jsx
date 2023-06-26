@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import { axiosWarframe } from "../../utils/configAxios";
-import { imgUrl } from "../../utils/imgUrl";
 import HeaderPageDetail from "../fragmentsUtils/HeaderPageDetail";
 import PatchlogsComponent from "../fragmentsUtils/PatchlogsComponent";
 import SectionComponent from "../fragmentsUtils/SectionComponent";
@@ -14,10 +13,14 @@ const PetBYName = () => {
   const { name } = useParams();
   const [petByName, setPetByName] = useState([]);
   const [allPets, setAllPets] = useState();
-  const { url } = imgUrl(petByName);
+
   useEffect(() => {
     axiosWarframe
-      .get(`items/search/${name}`)
+      .get(`items/search/${name}`, {
+        params: {
+          by: "name",
+        },
+      })
       .then((res) => {
         setPetByName(res.data[0]);
       })

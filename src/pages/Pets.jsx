@@ -8,10 +8,13 @@ const Pets = () => {
 
   useEffect(() => {
     axiosWarframe
-      .get("items")
+      .get("items/search/Pets", {
+        params: {
+          by: "category",
+        },
+      })
       .then((res) => {
-        const pets = res.data.filter((item) => item.category == "Pets");
-        setAllPets(pets);
+        setAllPets(res.data);
       })
       .catch((err) => console.log(err));
   }, []);

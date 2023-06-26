@@ -45,6 +45,5 @@ const SentinelDetailByName = () => {
       <PatchlogsComponent patchlogs={sentinelByName.patchlogs} />
     </section>
   );
-  text - xl;
 };
 export default SentinelDetailByName;

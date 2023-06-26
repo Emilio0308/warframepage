@@ -6,10 +6,19 @@ import NewsCard from "./NewsCard";
 const News = () => {
     const [news, setNews] = useState()
     const [currentPageNews, setCurrentPageNews] = useState(1)
+
+    // const headers = {
+    //   'Content-Type': 'application/json',
+    //   'content-language': 'en', // String que deseas incluir en los headers
+    // };
+    
     
     useEffect(() => {
-      axiosWarframe.get("pc/news")
-      .then((res)=> setNews(res.data.reverse()))
+      axiosWarframe.get("pc/en/news")
+      .then((res)=> {
+        setNews(res.data.reverse())
+        console.log(res)
+      })
       .catch((err)=> console.log(err))
     }, [])
 

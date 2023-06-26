@@ -9,12 +9,13 @@ const Sentinels = () => {
 
   useEffect(() => {
     axiosWarframe
-      .get("/items")
+      .get("items/search/Sentinels", {
+        params: {
+          by: "category",
+        },
+      })
       .then((res) => {
-        const sentinels = res.data.filter(
-          (item) => item.category == "Sentinels"
-        );
-        setAllSentinels(sentinels);
+        setAllSentinels(res.data);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -34,7 +35,7 @@ const Sentinels = () => {
               ))}
             </section>
           ) : (
-            <Loading/>
+            <Loading />
           )}
         </section>
       </section>

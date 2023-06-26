@@ -7,24 +7,23 @@ const WarframesHistory = () => {
             WARFRAMES
           </h2>
           <p>
-            Fueron llamados tenno. Guerreros de espada y arma de fuego: maestros
-            de la armadura warframe. Sobrevivientes de la Antigua Guerra que
-            quedaron a la deriva entre las ruinas. Ahora se les necesita una vez
-            más.
+            They were called Tenno. Sword and firearm warriors: masters of the
+            Warframe armor. Survivors of the Ancient War, adrift among the
+            ruins. Now they are needed once again.
           </p>
           <p>
-            Los grineer, con sus vastos ejércitos, se están extendiendo por todo
-            el Sistema Origen. Una llamada resuena a través de las estrellas
-            convocando a los tenno a un lugar antiguo. Convocándote a ti.
+            The Grineer, with their vast armies, are spreading throughout the
+            Origin System. A call echoes through the stars, summoning the Tenno
+            to an ancient place. Summoning you.
           </p>
           <p>
-            Deja que Lotus te guíe. Ella te rescató de tu cámara de criostasis y
-            te dio la oportunidad de sobrevivir. Los grineer te encontrarán;
-            debes estar preparado. Lotus te enseñará cómo usar los warframes y
-            los secretos para desbloquear sus poderes.
+            Let Lotus guide you. She rescued you from your cryostasis chamber
+            and gave you the opportunity to survive. The Grineer will find you;
+            you must be prepared. Lotus will teach you how to wield the
+            Warframes and the secrets to unlock their powers.
           </p>
           <h3 className="text-center font-semibold tracking-widest text-xl">
-            VEN, TENNO, DEBES UNIRTE A LA GUERRA.
+            COME ON, TENNO, YOU MUST JOIN THE WAR.
           </h3>
         </article>
       </div>

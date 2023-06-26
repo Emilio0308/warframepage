@@ -1,11 +1,11 @@
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { axiosWarframe } from "../../utils/configAxios";
-import { useEffect, useState } from "react";
 import ComponentsDrop from "../fragmentsUtils/ComponentsDrop";
-import LevelStatsMod from "./LevelStatsMod";
-import SectionTitle from "../fragmentsUtils/SectionTitle";
-import PatchlogsComponent from "../fragmentsUtils/PatchlogsComponent";
 import HeaderPageDetail from "../fragmentsUtils/HeaderPageDetail";
+import PatchlogsComponent from "../fragmentsUtils/PatchlogsComponent";
+import SectionTitle from "../fragmentsUtils/SectionTitle";
+import LevelStatsMod from "./LevelStatsMod";
 
 const ModByName = () => {
   const { name } = useParams();
@@ -39,19 +39,27 @@ const ModByName = () => {
           <div className="self-end grid gap-5 max-w-[400px] pb-4">
             <div className="grid grid-cols-2 border-b-2 border-red-600 py-3">
               <span className="uppercase font-medium">polarity</span>
-              <span className="capitalize font-medium text-red-700">{modByName.polarity}</span>
+              <span className="capitalize font-medium text-red-700">
+                {modByName.polarity}
+              </span>
             </div>
             <div className="grid grid-cols-2 border-b-2 border-red-600 py-3">
               <span className="uppercase font-medium">rarity</span>
-              <span className="capitalize font-medium text-red-700">{modByName.rarity}</span>
+              <span className="capitalize font-medium text-red-700">
+                {modByName.rarity}
+              </span>
             </div>
             <div className="grid grid-cols-2 border-b-2 border-red-600 py-3">
               <span className="uppercase font-medium">compatName</span>
-              <span className="capitalize font-medium text-red-700">{modByName.compatName}</span>
+              <span className="capitalize font-medium text-red-700">
+                {modByName.compatName}
+              </span>
             </div>
             <div className="grid grid-cols-2 border-b-2 border-red-600 py-3">
               <span className="uppercase font-medium">isPrime</span>
-              <span className="capitalize font-medium text-red-700">{modByName.isPrime ? "yes" : "no"}</span>
+              <span className="capitalize font-medium text-red-700">
+                {modByName.isPrime ? "yes" : "no"}
+              </span>
             </div>
           </div>
         </article>
