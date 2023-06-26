@@ -1,14 +1,14 @@
-import { useParams } from "react-router-dom";
-import { axiosWarframe } from "../../utils/configAxios";
 import { useEffect, useState } from "react";
-import { imgUrl } from "../../utils/imgUrl";
-import BasicStatistic from "./BasicStatistic";
-import SectionTitle from "../fragmentsUtils/SectionTitle";
-import SectionComponent from "../fragmentsUtils/SectionComponent";
+import { useParams } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
-import PetResources from "./PetResources";
-import PatchlogsComponent from "../fragmentsUtils/PatchlogsComponent";
+import { axiosWarframe } from "../../utils/configAxios";
+import { imgUrl } from "../../utils/imgUrl";
 import HeaderPageDetail from "../fragmentsUtils/HeaderPageDetail";
+import PatchlogsComponent from "../fragmentsUtils/PatchlogsComponent";
+import SectionComponent from "../fragmentsUtils/SectionComponent";
+import SectionTitle from "../fragmentsUtils/SectionTitle";
+import BasicStatistic from "./BasicStatistic";
+import PetResources from "./PetResources";
 
 const PetBYName = () => {
   const { name } = useParams();
@@ -52,7 +52,10 @@ const PetBYName = () => {
           </>
         )}
         {allPets && petByName && (
-          <PetResources allPets={allPets} petByName={petByName} />
+          <>
+            <SectionTitle title={"pets parts"} />
+            <PetResources allPets={allPets} petByName={petByName} />
+          </>
         )}
         <PatchlogsComponent patchlogs={petByName.patchlogs} />
       </section>

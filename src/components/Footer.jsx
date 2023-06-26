@@ -68,7 +68,7 @@ const Footer = () => {
           </div>
         </section>
       </footer>
-      <div className="bg-black text-white h-[30px] text-center"></div>
+      <div className="bg-black text-white h-[30px] text-center mb-[60px] lg:mb-0"></div>
     </>
   );
 };

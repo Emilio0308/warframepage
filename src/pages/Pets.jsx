@@ -24,7 +24,6 @@ const Pets = () => {
           listTypes.push(pet.type);
         }
       });
-      console.log(listTypes)
     }
   }, [allPets]);
 

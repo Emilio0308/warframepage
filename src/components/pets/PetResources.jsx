@@ -44,7 +44,7 @@ const PetResources = ({ allPets, petByName }) => {
   }, [petsParts]);
 
   return (
-    <div className="flex flex-wrap">
+    <div className="grid grid-cols-[repeat(auto-fill,_minmax(160px,1fr))] my-10">
       {petsParts.map((part) => (
         <PetPart key={part.uniqueName} part={part} />
       ))}
