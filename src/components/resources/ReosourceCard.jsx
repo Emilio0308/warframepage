@@ -10,7 +10,7 @@ const ReosourceCard = ({ resource, path, param }) => {
     >
       <div className="flex justify-center items-center w-full h-full">
         <img
-          className="w-full object-contain mx-auto"
+          className="w-full object-contain mx-auto aspect-square"
           src={url}
           alt={resource.name}
           loading="lazy"

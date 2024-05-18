@@ -18,8 +18,8 @@ const WeaponCard = ({ weapon, setCurrentWeapon }) => {
       <div className="h-full w-full">
         <img
           download="lazy"
-          className="object-contain h-full mx-auto"
-          src={`${url}`}
+          className="object-contain h-full mx-auto aspect-square"
+          src={url}
           alt={weapon.name}
         />
       </div>

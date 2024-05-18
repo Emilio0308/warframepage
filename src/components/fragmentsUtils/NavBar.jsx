@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaBars } from "react-icons/fa";
+// import { FaBars } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import LinkNavBar from "./LinkNavBar";
 
@@ -56,7 +56,7 @@ const NavBar = () => {
             onClick={() => setIsShowNav((prev) => !prev)}
             className="h-[60px] pr-3 lg:hidden text-xl"
           >
-            <FaBars/>
+            {/* <FaBars/> */}
           </button>
         </div>
       </nav>
